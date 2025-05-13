@@ -64,3 +64,8 @@
     transform: scaleY(1);
   }
 }
+@mixin grid-center {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
