@@ -1,0 +1,12 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+@use "../abstracts/functions";
+
+.button {
+  @include mixins.flex-center;
+  background-color: variables.$primary-color;
+  color: white;
+  padding: functions.rem(10) functions.rem(20);
+  border: none;
+  border-radius: 5px;
+}

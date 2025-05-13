@@ -1,0 +1,393 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+body.home {
+  background: #fafafa;
+}
+main {
+  //****HERO SECTION****//
+  .heroBanner {
+    background-image: url("../assets/img/hero-banner.png");
+    @include mixins.bg-center-cover-no-repeat;
+
+    .heroBannerContent {
+      @include mixins.flex-center;
+      flex-direction: column;
+      gap: 1em;
+      padding: 10em;
+      text-align: center;
+      h1 {
+        font-size: 5em;
+        color: variables.$white;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 1.2em;
+      }
+      p {
+        font-size: 1.6em;
+        color: variables.$white;
+        font-weight: 200;
+        white-space: pre-line;
+        line-height: 1.6em;
+        margin-bottom: 2em;
+      }
+      a {
+        border: 2px solid variables.$white;
+        border-radius: 2em;
+        padding: 0.7em 1.2em;
+        color: variables.$white;
+        font-size: 1.2em;
+        font-weight: 200;
+        @include mixins.anchorEffects;
+      }
+    }
+  }
+  //****ABOUT SECTION*****//
+  .aboutUs {
+    display: grid;
+    grid-template-columns: 200px minmax(150px, 1fr) 120px;
+    // align-items: center;
+    gap: 10em;
+    text-align: center;
+    padding: 7em 0 0 0;
+
+    h2 {
+      font-size: 3em;
+      // white-space: pre-line;
+      color: variables.$voilet;
+      font-weight: 600;
+      line-height: 1.2em;
+      span {
+        color: variables.$lightgrey;
+        font-weight: 500;
+      }
+    }
+    p {
+      font-size: 1.2em;
+      // color: variables.$darkgrey;
+      font-weight: 300;
+      line-height: 2em;
+      margin-top: 1em;
+      margin-bottom: 2em;
+    }
+    a {
+      color: variables.$orange;
+      text-decoration: underline;
+    }
+  }
+  .aboutUs2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    padding: 7em 0 2em 0;
+    align-items: center;
+    grid-row-gap: 10px;
+    border-bottom: 1px solid variables.$lightgrey;
+
+    .aboutUs2Content {
+      background-color: variables.$grey;
+      padding: 3em;
+      border-radius: 1em;
+
+      .subText {
+        color: variables.$orange;
+        font-size: 1.5em;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 3em;
+        // white-space: pre-line;
+        color: variables.$darkgrey;
+        font-weight: 500;
+        line-height: 1.2em;
+        margin-top: 0.7em;
+        padding-right: 4.5em;
+      }
+      p {
+        font-size: 0.9em;
+        color: variables.$darkgrey;
+        font-weight: 400;
+        line-height: 1.5em;
+        margin-top: 1em;
+      }
+      /* Basic styles */
+      .feature-wrapper {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .feature-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 20px;
+      }
+
+      .tab-btn {
+        background: #eee;
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        opacity: 0.5;
+      }
+
+      .tab-btn.active {
+        background: #d33;
+        opacity: 1;
+      }
+
+      .features {
+        display: flex;
+        flex-direction: column;
+        gap: 5.4em;
+        margin-top: 2em;
+        #feature1 {
+          span {
+            background-color: variables.$orange;
+            width: 75px;
+            height: 55px;
+            @include mixins.flex-center;
+            margin: 0 auto;
+            border-radius: 2em;
+          }
+          h3 {
+            font-size: 1.2em;
+            color: variables.$orange;
+            margin: 0.8em 0 0.5em;
+          }
+        }
+        #feature2 {
+          span {
+            background-color: variables.$golden;
+            width: 75px;
+            height: 55px;
+            @include mixins.flex-center;
+            margin: 0 auto;
+            border-radius: 2em;
+          }
+          h3 {
+            font-size: 1.2em;
+            color: variables.$golden;
+            margin: 0.8em 0 0.5em;
+          }
+        }
+        #feature3 {
+          span {
+            background-color: variables.$voilet;
+            width: 75px;
+            height: 55px;
+            @include mixins.flex-center;
+            margin: 0 auto;
+            border-radius: 2em;
+          }
+          h3 {
+            font-size: 1.2em;
+            color: variables.$voilet;
+            margin: 0.8em 0 0.5em;
+          }
+        }
+      }
+
+      .feature-box {
+        display: none;
+        max-width: 300px;
+      }
+
+      .feature-box.active {
+        display: block;
+      }
+
+      /* Desktop layout */
+      @media (min-width: 768px) {
+        .feature-tabs {
+          display: none;
+        }
+
+        .features {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+        .feature-box {
+          display: block !important;
+        }
+      }
+    }
+    .mission {
+      span {
+        color: variables.$darkgrey;
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+      .imgContent {
+        @include mixins.flex-center;
+        margin-bottom: 4em;
+
+        h3 {
+          font-size: 1.5em;
+          color: variables.$voilet;
+          margin: 0.8em 0 0.5em;
+          font-weight: 500;
+        }
+        p {
+          font-size: 0.9em;
+          color: variables.$darkgrey;
+          font-weight: 400;
+          line-height: 1.5em;
+          margin-top: 1em;
+        }
+      }
+      .features-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1.5em 0 0 0;
+        margin: 0;
+        max-width: 900px;
+        li {
+          flex: 1 1 48%;
+          position: relative;
+          font-size: 0.9em;
+          font-weight: 400;
+          padding: 1em 0 1em 2em;
+          &::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 15px;
+            border: 2px solid variables.$white;
+          }
+          /* Different bullet colors */
+          &.red::before {
+            border-color: variables.$orange;
+          }
+          &.blue::before {
+            border-color: variables.$voilet;
+          }
+          &.orange::before {
+            border-color: variables.$golden;
+          }
+          &.gray::before {
+            border-color: variables.$darkgrey;
+          }
+        }
+      }
+    }
+  }
+  //****OUR SERVICES SECTION****//
+  .ourServices {
+    text-align: center;
+    padding-top: 5em;
+    .subText {
+      color: variables.$orange;
+      font-size: 1.5em !important;
+      font-weight: 600;
+    }
+    h2 {
+      font-size: 3em;
+      // white-space: pre-line;
+      color: variables.$voilet;
+      font-weight: 600;
+      line-height: 1.2em;
+      margin-top: 0.7em;
+      text-align: center;
+    }
+    .ourServicesContent {
+      @include mixins.flex-center;
+      text-align: left;
+      h3 {
+        font-size: 1.5em;
+        color: variables.$darkgrey;
+        margin: 0.8em 0 0.5em;
+        font-weight: 600;
+      }
+      p {
+        font-size: 1.2em;
+        color: variables.$darkgrey;
+        font-weight: 400;
+        line-height: 1.8em;
+        white-space: pre-line;
+        margin-top: -2em;
+      }
+    }
+    .serviceList {
+      @include mixins.flex-center;
+      gap: 1em;
+      div {
+        border: 1px solid variables.$lightgrey;
+        border-radius: 2em;
+        padding: 2em 2em;
+        width: 20%;
+        span {
+          background-color: variables.$orange;
+          width: 75px;
+          height: 55px;
+          @include mixins.flex-center;
+          margin: 0 auto;
+          border-radius: 2em;
+        }
+        h3 {
+          font-size: 1.2em;
+          color: variables.$orange;
+          margin: 0.8em 0 0.5em;
+        }
+      }
+      div:nth-child(2) {
+        span {
+          background-color: variables.$orange2;
+        }
+        h3 {
+          color: variables.$orange2;
+        }
+      }
+      div:nth-child(3) {
+        span {
+          background-color: variables.$voilet;
+        }
+        h3 {
+          color: variables.$voilet;
+        }
+      }
+      div:nth-child(4) {
+        span {
+          background-color: variables.$golden;
+        }
+        h3 {
+          color: variables.$golden;
+        }
+      }
+    }
+  }
+  //****PRICING SECTION****//
+  .bg-grey {
+    background-color: variables.$lightgrey2;
+    margin-top: 10em;
+    margin-bottom: 2em;
+  }
+  .pricing {
+    .imgContent {
+      @include mixins.flex-center;
+      margin-bottom: 4em;
+      span {
+        color: variables.$orange;
+        font-size: 1.5em;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 3em;
+        color: variables.$darkgrey;
+        font-weight: 600;
+        line-height: 1.2em;
+        margin-top: 0.7em;
+      }
+      p {
+        font-size: 0.9em;
+        color: variables.$darkgrey;
+        font-weight: 400;
+        line-height: 1.5em;
+        margin-top: 1em;
+      }
+    }
+  }
+}

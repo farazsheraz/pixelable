@@ -1,0 +1,46 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+footer {
+  color: white;
+  padding: 20rem 0 4em 0;
+  background-image: url("../assets/img/footer-banner.png");
+  @include mixins.bg-center-cover-no-repeat;
+
+  .container {
+    @include mixins.flex-space-bw-end;
+    .copyright {
+      border-radius: 30px;
+      border: 0.5px solid variables.$white;
+      padding: 0.5em 1em;
+    }
+    div {
+      ul {
+        @include mixins.flex-space-bw;
+        margin-top: 10px;
+
+        li {
+          border: 0.1em solid variables.$orange;
+          border-radius: 0.25em;
+          @include mixins.flex-center;
+          padding: 0.5em;
+          @include mixins.anchorEffects;
+          &:hover {
+            // background-color: variables.$white;
+            a {
+              img {
+                filter: brightness(1) invert(1);
+              }
+            }
+          }
+        }
+      }
+    }
+    a,
+    p {
+      color: variables.$white;
+      font-size: 1.1em;
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+}

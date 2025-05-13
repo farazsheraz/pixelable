@@ -1,0 +1,10 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="184px" height="45px">
+<text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" transform="matrix( 1.03210189739156, 0, 0, 1.03210189739155,0.56970526672296, 34.8531208713071)" font-size="42.227px"><tspan font-size="42.227px" font-family="Gadugi" font-weight="bold" fill="#FFFFFF">p</tspan><tspan font-size="42.227px" font-family="Gadugi" font-weight="bold" fill="#FFFFFF">&#32;</tspan><tspan font-size="42.227px" font-family="Gadugi" font-weight="bold" fill="#FFFFFF">xel</tspan><tspan font-size="42.227px" font-family="Gadugi" font-weight="bold" fill="#DDDDDD">able</tspan></text>
+<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+ d="M33.426,27.694 L33.426,35.113 L26.008,35.113 L26.008,27.694 L29.717,27.694 L29.717,20.276 L26.008,20.276 L26.008,12.857 L33.426,12.857 L33.426,20.276 L37.135,20.276 L37.135,27.694 L33.426,27.694 Z"/>
+<path fill-rule="evenodd"  fill="rgb(221, 221, 221)"
+ d="M25.678,0.387 L32.903,0.387 L32.903,7.612 L25.678,7.612 L25.678,0.387 Z"/>
+</svg>

@@ -1,0 +1,66 @@
+@use "../abstracts/variables";
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-bw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin bg-center-cover-no-repeat {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@mixin container-1440px {
+  width: 1440px;
+  margin: 0 auto;
+}
+@mixin flex-space-bw-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+@mixin anchorEffects {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  &:hover {
+    color: variables.$orange; // Or any color that contrasts
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: variables.$white;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    border-radius: 2em;
+  }
+  &:hover:before {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
