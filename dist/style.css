@@ -920,9 +920,10 @@ main .contact .form .inner p {
 }
 main .contact .form .inner .form-section {
   margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   align-items: center;
+  justify-items: center;
+  grid-template-columns: minmax(250px, auto) 1fr;
 }
 main .contact .form .inner .form-section h3 {
   color: #888;
