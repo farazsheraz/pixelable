@@ -69,3 +69,8 @@
   align-items: center;
   justify-items: center;
 }
+@mixin grid-stretch{
+  display: grid;
+  align-items: stretch;
+  justify-items: stretch;
+}

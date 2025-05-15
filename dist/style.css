@@ -883,9 +883,8 @@ main .contact .form {
   border: 2px solid #a5a5a5;
   border-radius: 2em;
   display: grid;
-  align-items: center;
-  justify-items: center;
   align-items: stretch;
+  justify-items: stretch;
   grid-template-columns: minmax(200px, 500px) 1fr;
 }
 main .contact .form article {
@@ -912,66 +911,130 @@ main .contact .form article a {
 main .contact .form .inner {
   padding: 3em;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }
 main .contact .form .inner p {
   text-align: left;
   color: #a5a5a5;
-  margin-bottom: 2em;
+}
+main .contact .form .inner .form-header {
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+}
+main .contact .form .inner .filters {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  color: #888;
+  font-size: 14px;
+}
+main .contact .form .inner .filters svg {
+  margin-right: 8px;
 }
 main .contact .form .inner .form-section {
   margin-bottom: 20px;
   display: grid;
+  grid-template-columns: minmax(auto, 15%) minmax(auto, 85%);
   align-items: center;
-  justify-items: center;
-  grid-template-columns: minmax(250px, auto) 1fr;
 }
-main .contact .form .inner .form-section h3 {
-  color: #888;
-}
-main .contact .form .inner .button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-main .contact .form .inner .btn {
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: white;
-  cursor: pointer;
-}
-main .contact .form .inner .btn.selected {
-  border-color: #00a0c6;
-  color: #00a0c6;
-}
-main .contact .form .inner .input-group {
-  display: flex;
-  gap: 20px;
+main .contact .form .inner .form-section-label {
+  font-size: 14px;
+  color: #666;
   margin-bottom: 10px;
 }
-main .contact .form .inner input[type=text],
-main .contact .form .inner input[type=email],
-main .contact .form .inner textarea {
-  width: 100%;
+main .contact .form .inner .option-group {
+  display: flex;
+  gap: 8px;
+}
+main .contact .form .inner .option-btn {
+  flex: 1;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
-}
-main .contact .form .inner .send-btn {
-  background: #2ba5b6;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  color: #333;
   cursor: pointer;
+  text-align: center;
 }
-main .contact .form .inner input[type=radio] {
+main .contact .form .inner .option-btn.selected {
+  border-color: #2aacb9;
+  color: #2aacb9;
+}
+main .contact .form .inner .basic-info {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+main .contact .form .inner .basic-info-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 25px;
+  color: #888;
+  font-size: 14px;
+}
+main .contact .form .inner .basic-info-header svg {
   margin-right: 8px;
 }
-main .contact .form .inner label.radio-label {
+main .contact .form .inner .input-row {
   display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+main .contact .form .inner .input-group:first-child,
+main .contact .form .inner .input-group:nth-child(2) {
+  flex: 1;
+  position: relative;
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: minmax(auto, 31%) minmax(auto, 68%);
   align-items: center;
-  margin-right: 15px;
+}
+main .contact .form .inner .input-group {
+  flex: 1;
+  position: relative;
+  margin-bottom: 35px;
+  display: grid;
+  grid-template-columns: minmax(auto, 15%) minmax(auto, 85%);
+  align-items: center;
+}
+main .contact .form .inner .input-group label {
+  display: block;
+  color: #666;
+  font-size: 14px;
+}
+main .contact .form .inner .input-group input,
+main .contact .form .inner .input-group textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0;
+  font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+main .contact .form .inner .input-group input:focus,
+main .contact .form .inner .input-group textarea:focus {
+  border-bottom-color: #2aacb9;
+}
+main .contact .form .inner .send-btn {
+  background-color: #2aacb9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 0;
+  width: 125px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+main .contact .form .inner .send-btn:hover {
+  background-color: #239aa7;
 }
 
 body.about {

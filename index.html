@@ -453,107 +453,109 @@
             <div class="inner">
               <p>Fill out the form below and we'll get back to you shortly</p>
               <p><img src="assets/img/filter.png" alt="" /> Filters</p>
-              <form>
+              <form class="form-container" onsubmit="handleSubmit(event)">
                 <div class="form-section">
-                  <label>Selected Plan</label>
-                  <div class="button-group">
-                    <div class="btn">Silver</div>
-                    <div class="btn selected">Diamond</div>
-                    <div class="btn">Gold</div>
-                    <div class="btn">Custom</div>
+                  <div class="form-section-label">Selected Plan</div>
+                  <div class="option-group" id="selected-plan">
+                    <button class="option-btn" data-value="Silver">
+                      Silver
+                    </button>
+                    <button class="option-btn" data-value="Diamond">
+                      Diamond
+                    </button>
+                    <button class="option-btn" data-value="Gold">Gold</button>
+                    <button class="option-btn" data-value="Custom">
+                      Custom
+                    </button>
                   </div>
                 </div>
 
                 <div class="form-section">
-                  <label>Plan Budget</label>
-                  <div class="button-group">
-                    <label class="radio-label"
-                      ><input type="radio" name="budget" value="2500" />$ 2500
-                      USD</label
-                    >
-                    <label class="radio-label"
-                      ><input
-                        type="radio"
-                        name="budget"
-                        value="7500"
-                        checked
-                      />$ 7500 USD</label
-                    >
-                    <label class="radio-label"
-                      ><input type="radio" name="budget" value="15000" />$ 15000
-                      USD</label
-                    >
-                    <label class="radio-label"
-                      ><input
-                        type="radio"
-                        name="budget"
-                        value="tbd"
-                      />TBD</label
-                    >
+                  <div class="form-section-label">Plan Budget</div>
+                  <div class="option-group" id="plan-budget">
+                    <button class="option-btn" data-value="2500">
+                      $ 2500 USD
+                    </button>
+                    <button class="option-btn" data-value="7500">
+                      $ 7500 USD
+                    </button>
+                    <button class="option-btn" data-value="15000">
+                      $ 15000 USD
+                    </button>
+                    <button class="option-btn" data-value="tbd">TBD</button>
                   </div>
                 </div>
 
                 <div class="form-section">
-                  <label>Select Services</label>
-                  <div class="button-group">
-                    <label class="radio-label"
-                      ><input
-                        type="radio"
-                        name="service"
-                        value="uiux"
-                      />UI/UX</label
-                    >
-                    <label class="radio-label"
-                      ><input
-                        type="radio"
-                        name="service"
-                        value="animation"
-                      />Animation</label
-                    >
-                    <label class="radio-label"
-                      ><input
-                        type="radio"
-                        name="service"
-                        value="wordpress"
-                      />Wordpress</label
-                    >
-                    <label class="radio-label"
-                      ><input
-                        type="radio"
-                        name="service"
-                        value="tbd"
-                      />TBD</label
-                    >
+                  <div class="form-section-label">Select Services</div>
+                  <div class="option-group" id="select-services">
+                    <button class="option-btn" data-value="UI/UX">UI/UX</button>
+                    <button class="option-btn" data-value="Animation">
+                      Animation
+                    </button>
+                    <button class="option-btn" data-value="Wordpress">
+                      Wordpress
+                    </button>
+                    <button class="option-btn" data-value="tbd">TBD</button>
                   </div>
                 </div>
 
-                <div class="form-section">
-                  <h3>ⓘ Basic Info</h3>
+                <div class="basic-info">
+                  <div class="basic-info-header">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#888"
+                        stroke-width="1.5"
+                      />
+                      <path
+                        d="M12 16v.01"
+                        stroke="#888"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M12 8v4"
+                        stroke="#888"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                    <p>Basic Info</p>
+                  </div>
+
+                  <div class="input-row">
+                    <div class="input-group">
+                      <label for="first-name">First Name</label>
+                      <input type="text" id="first-name" />
+                    </div>
+
+                    <div class="input-group">
+                      <label for="last-name">Last Name</label>
+                      <input type="text" id="last-name" />
+                    </div>
+                  </div>
+
                   <div class="input-group">
-                    <input
-                      type="text"
-                      placeholder="First Name"
-                      name="firstName"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Last Name"
-                      name="lastName"
-                    />
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" />
                   </div>
-                  <input
-                    type="email"
-                    placeholder="Email ID"
-                    name="email"
-                  /><br /><br />
-                  <textarea
-                    rows="4"
-                    placeholder="Message"
-                    name="message"
-                  ></textarea>
+
+                  <div class="input-group">
+                    <label for="message">Message</label>
+                    <input type="text" id="message" />
+                  </div>
                 </div>
 
-                <button type="submit" class="send-btn">Send</button>
+                <button class="send-btn">Send</button>
               </form>
             </div>
           </div>
