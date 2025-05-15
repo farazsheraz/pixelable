@@ -94,3 +94,41 @@ document.querySelector('.send-btn').addEventListener('click', function () {
             console.error(error);
         });
 });
+//BANNER OBJECTS ANIMATION GSAP
+// Floating up and down
+gsap.to(".object2", {
+    x: 10,
+    y: -10,
+    rotation: 5,
+    duration: 6,
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut"
+});
+
+// Rotation for a dynamic ring effect
+gsap.to(".object1", {
+    rotation: 360,
+    duration: 15,
+    repeat: -1,
+    ease: "linear",
+    transformOrigin: "50% 50%"
+});
+
+// Subtle scaling pulse
+gsap.to(".object4", {
+    scale: 1.05,
+    duration: 2,
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut"
+});
+
+// Side to side floating
+gsap.to(".object3", {
+    x: 15,
+    duration: 4,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+});
