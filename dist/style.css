@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Gotu&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 * {
@@ -559,12 +560,15 @@ main .bg-grey {
   background-color: #fafafa;
   margin-top: 10em;
   margin-bottom: 2em;
+  padding: 5em 0;
 }
 main .pricing .imgContent {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 4em;
+  padding: 0em 0 3em 0;
+  border-bottom: 1px solid #cacaca;
 }
 main .pricing .imgContent span {
   color: #db3722;
@@ -579,11 +583,222 @@ main .pricing .imgContent h2 {
   margin-top: 0.7em;
 }
 main .pricing .imgContent p {
-  font-size: 0.9em;
+  font-size: 1.5em;
   color: #a5a5a5;
   font-weight: 400;
   line-height: 1.5em;
   margin-top: 1em;
+}
+main .pricing .pricingTable {
+  text-align: center;
+}
+main .pricing .pricingTable p {
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+main .pricing .pricingTable .pricing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em 0;
+}
+main .pricing .pricingTable .pricing-container .plan {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 375px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+main .pricing .pricingTable .pricing-container .plan .firstSec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: start;
+  text-align: left;
+  padding: 0 1em;
+}
+main .pricing .pricingTable .pricing-container .plan .firstSec h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+main .pricing .pricingTable .pricing-container .plan .firstSec .description {
+  font-size: 1em;
+  color: #a5a5a5;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+main .pricing .pricingTable .pricing-container .plan .price {
+  position: relative;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 6px;
+  box-shadow: 1.359px 12.929px 9px 0px rgba(90, 90, 90, 0.19);
+  width: 405px;
+  height: 104px;
+  z-index: 189;
+  left: -38px;
+  display: flex;
+}
+main .pricing .pricingTable .pricing-container .plan .price::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 10px solid #575454;
+  left: -1px;
+  top: -10px;
+}
+main .pricing .pricingTable .pricing-container .plan .price::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 10px solid #575454;
+  right: 2px;
+  top: -10px;
+}
+main .pricing .pricingTable .pricing-container .plan .price p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 98%;
+  gap: 1em;
+}
+main .pricing .pricingTable .pricing-container .plan .price p .currency {
+  font-size: 1.2rem;
+  vertical-align: super;
+  color: #fff;
+}
+main .pricing .pricingTable .pricing-container .plan .price p .amount {
+  color: #fff !important;
+  font-size: 2em;
+  font-weight: bold;
+}
+main .pricing .pricingTable .pricing-container .plan .price p .unit {
+  font-size: 1rem;
+  margin-left: 0.25rem;
+  color: #fff;
+}
+main .pricing .pricingTable .pricing-container .plan .features {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin: 1.5em 0;
+}
+main .pricing .pricingTable .pricing-container .plan .features li {
+  margin: 0 0 2rem 0;
+}
+main .pricing .pricingTable .pricing-container .plan .features li:before {
+  content: "✓";
+  color: #309baf;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+main .pricing .pricingTable .pricing-container .plan .selectPlan {
+  border-top: 1px solid #a5a5a5;
+}
+main .pricing .pricingTable .pricing-container .plan .selectPlan button {
+  margin-top: 1em;
+  padding: 1rem 1rem;
+  border-radius: 0.8em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  font-size: 1.2em;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+main .pricing .pricingTable .silver h2 {
+  color: #db3722;
+}
+main .pricing .pricingTable .silver .price {
+  color: #fff;
+  background-color: #db3722;
+  border-color: #9f1c0b !important;
+}
+main .pricing .pricingTable .silver .price p {
+  border-top: 2px solid #ffcec8;
+}
+main .pricing .pricingTable .silver .selectPlan button {
+  border-color: #db3722 !important;
+  color: #db3722;
+}
+main .pricing .pricingTable .diamond {
+  background-color: #f6fcff !important;
+  transform: scale(1.05);
+  z-index: 2 !important;
+}
+main .pricing .pricingTable .diamond .firstSec h2 {
+  color: #309baf;
+}
+main .pricing .pricingTable .diamond .price {
+  color: #fff;
+  background-color: #309baf;
+  border-color: #1d7e90 !important;
+}
+main .pricing .pricingTable .diamond .price p {
+  border-top: 2px solid #c3f6ff;
+}
+main .pricing .pricingTable .diamond .selectPlan button {
+  border-color: #309baf !important;
+  color: #309baf;
+  background-color: #fefbf4;
+}
+main .pricing .pricingTable .diamond .mostPopular {
+  margin-bottom: 3em;
+}
+main .pricing .pricingTable .diamond .mostPopular a {
+  background: #2e2f77;
+  color: white;
+  padding: 0.5em 1.2em;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  box-shadow: 0 10px 10px #d3d7da;
+}
+main .pricing .pricingTable .gold .firstSec h2 {
+  color: #edaa29;
+}
+main .pricing .pricingTable .gold .price {
+  background-color: #edaa29 !important;
+  border-color: #bf9139 !important;
+}
+main .pricing .pricingTable .gold .price p {
+  border-top: 2px solid #f9eacb;
+}
+main .pricing .pricingTable .gold .selectPlan button {
+  border-color: #edaa29 !important;
+  color: #edaa29;
+}
+main .pricing .pricingTable .customPlanNote p {
+  padding: 0.5em 1.2em;
+  border: 1px solid #edaa29;
+  border-radius: 1em;
+  background-color: #f9f6ef;
+  width: 910px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+main .pricing .pricingTable .customPlanNote p a {
+  background-color: #eff1ec;
+  color: #309baf;
+  border: 1px solid #309baf;
+  border-radius: 0.5em;
+  padding: 0.5em 0.7em;
+  font-weight: 600;
 }
 main .work p {
   color: #db3722;
