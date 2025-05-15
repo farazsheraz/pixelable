@@ -13,6 +13,11 @@ buttons.forEach(button => {
     });
 });
 
+//BACK2TOP
+document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 //FORM
 // Handle option selection
 document.querySelectorAll('.option-group').forEach(group => {
@@ -83,6 +88,7 @@ document.querySelector('.send-btn').addEventListener('click', function () {
     emailjs.send("service_6vyywcp", "template_kvw784g5", templateParams)
         .then(function (response) {
             alert("Message sent successfully!");
+            console.log(response);
         }, function (error) {
             alert("Failed to send message. Error: " + JSON.stringify(error));
             console.error(error);

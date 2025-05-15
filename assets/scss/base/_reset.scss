@@ -3,11 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+::selection{
+  color: black;
+  background-color: #fff;
+}
 li {
   list-style: none;
 }
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 button:focus {
   outline: 0;

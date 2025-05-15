@@ -7,12 +7,18 @@
   box-sizing: border-box;
 }
 
+::selection {
+  color: black;
+  background-color: #fff;
+}
+
 li {
   list-style: none;
 }
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 button:focus {
@@ -41,7 +47,7 @@ html {
 }
 
 .heroBanner header {
-  padding: 2rem;
+  padding: 3rem 1em 2em 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -178,15 +184,31 @@ nav ul li a :hover {
   background-color: aqua;
 }
 
-body.home {
-  background: #fafafa;
-}
-
 main .heroBanner {
   background-image: url("../assets/img/hero-banner.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+}
+main .heroBanner .objects img {
+  position: absolute;
+}
+main .heroBanner .objects img:first-child {
+  top: 10%;
+  left: -18%;
+}
+main .heroBanner .objects img:nth-child(2) {
+  bottom: 0;
+  left: 250px;
+}
+main .heroBanner .objects img:nth-child(3) {
+  bottom: 0;
+  right: 0;
+}
+main .heroBanner .objects img:nth-child(4) {
+  top: 300px;
+  right: 100px;
 }
 main .heroBanner .heroBannerContent {
   display: flex;
@@ -881,8 +903,6 @@ main .contact h2 {
   margin-bottom: 2em;
 }
 main .contact .form {
-  border: 2px solid #a5a5a5;
-  border-radius: 2em;
   display: grid;
   align-items: stretch;
   justify-items: stretch;
@@ -915,43 +935,31 @@ main .contact .form .inner {
   display: flex;
   flex-direction: column;
   gap: 2em;
+  border: 2px solid #cacaca;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  border-left: 0;
 }
 main .contact .form .inner p {
   text-align: left;
   color: #a5a5a5;
 }
-main .contact .form .inner .form-header {
-  margin-bottom: 30px;
-  color: #333;
-  font-size: 16px;
-  font-weight: 400;
-}
-main .contact .form .inner .filters {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-  color: #888;
-  font-size: 14px;
-}
-main .contact .form .inner .filters svg {
-  margin-right: 8px;
-}
-main .contact .form .inner .form-section {
+main .contact .form .inner .form-container .form-section {
   margin-bottom: 20px;
   display: grid;
   grid-template-columns: minmax(auto, 15%) minmax(auto, 85%);
   align-items: center;
 }
-main .contact .form .inner .form-section-label {
+main .contact .form .inner .form-container .form-section .form-section-label {
   font-size: 14px;
   color: #666;
   margin-bottom: 10px;
 }
-main .contact .form .inner .option-group {
+main .contact .form .inner .form-container .form-section .option-group {
   display: flex;
   gap: 8px;
 }
-main .contact .form .inner .option-btn {
+main .contact .form .inner .form-container .form-section .option-group .option-btn {
   flex: 1;
   padding: 10px;
   border: 1px solid #ddd;
@@ -962,15 +970,15 @@ main .contact .form .inner .option-btn {
   cursor: pointer;
   text-align: center;
 }
-main .contact .form .inner .option-btn.selected {
+main .contact .form .inner .form-container .form-section .option-group .option-btn.selected {
   border-color: #2aacb9;
   color: #2aacb9;
 }
-main .contact .form .inner .basic-info {
+main .contact .form .inner .form-container .basic-info {
   margin-top: 30px;
   margin-bottom: 20px;
 }
-main .contact .form .inner .basic-info-header {
+main .contact .form .inner .form-container .basic-info .basic-info-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -979,24 +987,10 @@ main .contact .form .inner .basic-info-header {
   color: #888;
   font-size: 14px;
 }
-main .contact .form .inner .basic-info-header svg {
+main .contact .form .inner .form-container .basic-info .basic-info-header svg {
   margin-right: 8px;
 }
-main .contact .form .inner .input-row {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-main .contact .form .inner .input-group:first-child,
-main .contact .form .inner .input-group:nth-child(2) {
-  flex: 1;
-  position: relative;
-  margin-bottom: 15px;
-  display: grid;
-  grid-template-columns: minmax(auto, 31%) minmax(auto, 68%);
-  align-items: center;
-}
-main .contact .form .inner .input-group {
+main .contact .form .inner .form-container .input-group {
   flex: 1;
   position: relative;
   margin-bottom: 35px;
@@ -1004,13 +998,8 @@ main .contact .form .inner .input-group {
   grid-template-columns: minmax(auto, 15%) minmax(auto, 85%);
   align-items: center;
 }
-main .contact .form .inner .input-group label {
-  display: block;
-  color: #666;
-  font-size: 14px;
-}
-main .contact .form .inner .input-group input,
-main .contact .form .inner .input-group textarea {
+main .contact .form .inner .form-container .input-group input,
+main .contact .form .inner .form-container .input-group textarea {
   width: 100%;
   border: none;
   border-bottom: 1px solid #ddd;
@@ -1019,13 +1008,18 @@ main .contact .form .inner .input-group textarea {
   outline: none;
   background: transparent;
 }
-main .contact .form .inner .input-group input:focus,
-main .contact .form .inner .input-group textarea:focus {
-  border-bottom-color: #2aacb9;
+main .contact .form .inner .form-container .input-group input:focus,
+main .contact .form .inner .form-container .input-group textarea:focus {
+  border-bottom-color: #309baf;
 }
-main .contact .form .inner .send-btn {
+main .contact .form .inner .form-container .input-group label {
+  display: block;
+  color: #666;
+  font-size: 14px;
+}
+main .contact .form .inner .form-container .send-btn {
   background-color: #309baf;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 0.7em;
   padding: 0.8em 1em;
@@ -1034,8 +1028,22 @@ main .contact .form .inner .send-btn {
   cursor: pointer;
   margin-top: 10px;
 }
-main .contact .form .inner .send-btn:hover {
+main .contact .form .inner .form-container .send-btn:hover {
   background-color: #db3722;
+}
+main .contact .form .inner .input-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+main .contact .form .inner .input-row .input-group:first-child,
+main .contact .form .inner .input-row .input-group:nth-child(2) {
+  flex: 1;
+  position: relative;
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: minmax(auto, 31%) minmax(auto, 68%);
+  align-items: center;
 }
 
 body.about {

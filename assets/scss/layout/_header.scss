@@ -3,7 +3,7 @@
 
 .heroBanner {
   header {
-    padding: 2rem;
+    padding: 3rem 1em 2em 1em;
     @include mixins.flex-space-bw;
     width: 100%;
     div {
