@@ -671,22 +671,25 @@ main .pricing .pricingTable .pricing-container .plan .price p {
   align-items: center;
   margin: 0 auto;
   width: 98%;
-  gap: 1em;
+  gap: 0.5em;
 }
 main .pricing .pricingTable .pricing-container .plan .price p .currency {
   font-size: 1.2rem;
   vertical-align: super;
   color: #fff;
+  font-weight: 500;
 }
 main .pricing .pricingTable .pricing-container .plan .price p .amount {
   color: #fff !important;
-  font-size: 2em;
+  font-size: 3em;
   font-weight: bold;
 }
 main .pricing .pricingTable .pricing-container .plan .price p .unit {
   font-size: 1rem;
   margin-left: 0.25rem;
   color: #fff;
+  font-weight: 500;
+  vertical-align: sub;
 }
 main .pricing .pricingTable .pricing-container .plan .features {
   list-style: none;

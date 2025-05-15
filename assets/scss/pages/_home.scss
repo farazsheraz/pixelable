@@ -468,25 +468,27 @@ main {
               top: -10px;
             }
             p {
-             
               @include mixins.flex-center;
               margin: 0 auto;
               width: 98%;
-              gap: 1em;
+              gap: 0.5em;
               .currency {
                 font-size: 1.2rem;
                 vertical-align: super;
                 color: variables.$white;
+                font-weight: 500;
               }
               .amount {
                 color: variables.$white !important;
-                font-size: 2em;
+                font-size: 3em;
                 font-weight: bold;
               }
               .unit {
                 font-size: 1rem;
                 margin-left: 0.25rem;
                 color: variables.$white;
+                font-weight: 500;
+                vertical-align: sub;
               }
             }
           }
@@ -538,11 +540,11 @@ main {
           color: variables.$white;
           background-color: variables.$orange;
           border-color: #9f1c0b !important;
-          p{
+          p {
             border-top: 2px solid #ffcec8;
           }
         }
-      
+
         .selectPlan {
           button {
             border-color: variables.$orange !important;
@@ -564,7 +566,7 @@ main {
           color: variables.$white;
           background-color: variables.$voilet;
           border-color: #1d7e90 !important;
-          p{
+          p {
             border-top: 2px solid #c3f6ff;
           }
         }
@@ -600,7 +602,7 @@ main {
         .price {
           background-color: variables.$golden !important;
           border-color: #bf9139 !important;
-          p{
+          p {
             border-top: 2px solid #f9eacb;
           }
         }
