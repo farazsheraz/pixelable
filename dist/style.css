@@ -878,6 +878,7 @@ main .contact h2 {
   line-height: 1.2em;
   margin-top: 0.7em;
   text-align: center;
+  margin-bottom: 2em;
 }
 main .contact .form {
   border: 2px solid #a5a5a5;
@@ -1023,18 +1024,18 @@ main .contact .form .inner .input-group textarea:focus {
   border-bottom-color: #2aacb9;
 }
 main .contact .form .inner .send-btn {
-  background-color: #2aacb9;
+  background-color: #309baf;
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 12px 0;
-  width: 125px;
-  font-size: 15px;
+  border-radius: 0.7em;
+  padding: 0.8em 1em;
+  width: 200px;
+  font-size: 1.2em;
   cursor: pointer;
   margin-top: 10px;
 }
 main .contact .form .inner .send-btn:hover {
-  background-color: #239aa7;
+  background-color: #db3722;
 }
 
 body.about {
