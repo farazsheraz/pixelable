@@ -884,6 +884,17 @@ main .work .workContent ul p {
   color: #000;
   font-weight: 400;
 }
+main .work .workContent .project {
+  transform: scale(0) translateY(100px);
+  opacity: 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+main .work .workContent .lamp {
+  width: 50px;
+  margin: 0 auto;
+  display: block;
+}
 main .btm {
   padding: 0em 0 3em 0;
   border-bottom: 1px solid #cacaca;

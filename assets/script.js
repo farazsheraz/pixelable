@@ -132,3 +132,42 @@ gsap.to(".object3", {
     yoyo: true,
     ease: "sine.inOut"
 });
+
+gsap.to(".lamp", {
+    scrollTrigger: {
+        trigger: ".work",
+        start: "top 75%",
+        toggleActions: "play none none none"
+    },
+    scale: 1.2,
+    boxShadow: "0 0 30px 10px yellow",
+    duration: 0.5,
+    yoyo: true,
+    repeat: 1
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".project").forEach((project, i) => {
+    gsap.fromTo(project,
+        {
+            scale: 0,
+            y: 100,
+            opacity: 0
+        },
+        {
+            scrollTrigger: {
+                trigger: ".work", // Replace with your actual section selector
+                start: "top 80%",
+                toggleActions: "play reverse play reverse",
+                scrub: false,
+            },
+            scale: 1,
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "back.out(1.7)",
+            delay: i * 0.1
+        }
+    );
+});

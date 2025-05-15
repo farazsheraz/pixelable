@@ -709,6 +709,18 @@ main {
           font-weight: 400;
         }
       }
+      .project {
+        transform: scale(0) translateY(100px);
+        opacity: 0;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .lamp {
+        width: 50px;
+        margin: 0 auto;
+        display: block;
+      }
     }
   }
   .btm {
