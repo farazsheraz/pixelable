@@ -683,43 +683,45 @@ main {
         line-height: 1.2em;
         margin-top: 1em;
       }
-      ul {
-        text-align: center;
-        li {
-          grid-template-columns: 1fr 1fr;
-          @include mixins.flex-center;
-          gap: 0.5em;
-          padding-bottom: 0.5em;
-        }
-        li:nth-child(2),
-        li:nth-child(3) {
-          // grid-template-columns: 1fr 1fr 1fr;
-          @include mixins.flex-center;
-          padding: 0 6em;
-        }
-        li:nth-child(3) {
-          padding: 0 12em;
-        }
-        li:last-child {
-          padding: 0 21em;
+      .portfolio {
+        ul {
+          text-align: center;
+          li {
+            grid-template-columns: 1fr 1fr;
+            @include mixins.flex-center;
+            gap: 0.5em;
+            padding-bottom: 0.5em;
+            img {
+              transform: scale(0) translateY(100px);
+              opacity: 0;
+              position: relative;
+              transition: all 0.3s ease;
+            }
+          }
+          li:nth-child(2),
+          li:nth-child(3) {
+            // grid-template-columns: 1fr 1fr 1fr;
+            @include mixins.flex-center;
+            padding: 0 6em;
+          }
+          li:nth-child(3) {
+            padding: 0 12em;
+          }
+          li:last-child {
+            padding: 0 21em;
+          }
         }
         p {
           font-size: 1.2em !important;
           color: variables.$black;
           font-weight: 400;
+          margin-top: 1em;
         }
-      }
-      .project {
-        transform: scale(0) translateY(100px);
-        opacity: 0;
-        position: relative;
-        transition: all 0.3s ease;
-      }
-      
-      .lamp {
-        width: 50px;
-        margin: 0 auto;
-        display: block;
+        .lamp {
+          margin: 0 auto;
+          display: block;
+          margin-top: 1em;
+        }
       }
     }
   }
@@ -755,10 +757,12 @@ main {
         border-top-left-radius: 2em;
         border-bottom-left-radius: 2em;
         padding: 4em 5em;
-        h4 {
+        h3 {
           font-size: 2em;
           color: variables.$white;
           font-weight: 400;
+          line-height: 1.5em;
+          margin-bottom: 1em;
         }
         a {
           color: variables.$white;
