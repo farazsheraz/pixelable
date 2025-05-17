@@ -57,7 +57,10 @@ html {
   align-items: center;
   width: 100%;
 }
-.heroBanner header div a {
+.heroBanner header .hamburger {
+  display: none;
+}
+.heroBanner header .mobileRight a {
   color: #db3722;
   background-color: #fff;
   border: 1px solid #fff;
@@ -66,6 +69,11 @@ html {
   font-size: 1.3em;
 }
 
+@media (max-width: 768px) {
+  .heroBanner header .hamburger {
+    display: block;
+  }
+}
 footer {
   color: white;
   padding: 20rem 0 4em 0;
@@ -200,7 +208,7 @@ main .heroBanner .objects img {
 }
 main .heroBanner .objects img:first-child {
   top: 10%;
-  left: -18%;
+  left: -320px;
 }
 main .heroBanner .objects img:nth-child(2) {
   bottom: 0;
@@ -1063,7 +1071,51 @@ main .contact .form .inner .input-row .input-group:nth-child(2) {
   grid-template-columns: minmax(auto, 31%) minmax(auto, 68%);
   align-items: center;
 }
+@media (max-width: 768px) {
+  main .aboutUs,
+  main .aboutUs2 {
+    grid-template-columns: 1fr;
+  }
+  main .aboutUs .mission .features-list,
+  main .aboutUs2 .mission .features-list {
+    grid-template-columns: 1fr;
+  }
+  main .work .workContent {
+    grid-template-columns: 1fr;
+  }
+  main .aboutUs2 .aboutUs2Content h2 {
+    padding-right: 0 !important;
+  }
+  main .aboutUs2 .mission .imgContent {
+    flex-direction: column;
+  }
+  main .ourServices .ourServicesContent {
+    flex-direction: column;
+  }
+  main .pricing .imgContent {
+    flex-direction: column;
+  }
+  main .contact .form {
+    grid-template-columns: 1fr;
+  }
+  main .object4 {
+    display: none;
+  }
+}
 
+@media (max-width: 768px) {
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+  }
+  footer .container .copyright {
+    order: 2;
+  }
+  footer .container #backToTop {
+    display: none;
+  }
+}
 body.about {
   background: #fff;
 }

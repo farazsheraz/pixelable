@@ -13,7 +13,7 @@ main {
       }
       img:first-child {
         top: 10%;
-        left: -18%;
+        left: -320px;
       }
       img:nth-child(2) {
         bottom: 0;
@@ -886,6 +886,69 @@ main {
             align-items: center;
           }
         }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .aboutUs,
+    .aboutUs2 {
+      grid-template-columns: 1fr;
+      .mission {
+        .features-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+    .work {
+      .workContent {
+        grid-template-columns: 1fr;
+      }
+    }
+    .aboutUs2 {
+      .aboutUs2Content {
+        h2 {
+          padding-right: 0 !important;
+        }
+      }
+      .mission {
+        .imgContent {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .ourServices {
+      .ourServicesContent {
+        flex-direction: column;
+      }
+    }
+    .pricing {
+      .imgContent {
+        flex-direction: column;
+      }
+    }
+    .contact {
+      .form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .object4 {
+      display: none;
+    }
+  }
+}
+@media (max-width: 768px) {
+  footer {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      gap: 2em;
+      .copyright{
+        order: 2;
+      }
+      #backToTop {
+        display: none;
       }
     }
   }

@@ -6,7 +6,10 @@
     padding: 3rem 1em 2em 1em;
     @include mixins.flex-space-bw;
     width: 100%;
-    div {
+    .hamburger {
+      display: none;
+    }
+    .mobileRight {
       a {
         color: variables.$orange;
         background-color: variables.$white;
@@ -14,6 +17,17 @@
         border-radius: 2em;
         padding: 0.5em 2em;
         font-size: 1.3em;
+      }
+    }
+  }
+}
+//MEIDA QUERY
+
+@media (max-width: 768px) {
+  .heroBanner {
+    header {
+      .hamburger {
+        display: block;
       }
     }
   }
