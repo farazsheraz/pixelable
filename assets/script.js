@@ -1,4 +1,67 @@
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.querySelector(".mobileMenu");
+const body = document.body;
 
+menuToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    menuToggle.classList.toggle("open");
+    body.classList.toggle("menu-open", isOpen);
+});
+
+
+const container = document.querySelector(".serviceList");
+const items = container.querySelectorAll("div");
+const dotsContainer = document.querySelector(".dots");
+
+let currentIndex = 0;
+
+function updateSlider(position) {
+    const itemWidth = items[0].offsetWidth + 16; // card width + gap
+    container.scrollTo({
+        left: position * itemWidth,
+        behavior: "smooth",
+    });
+
+    document
+        .querySelectorAll(".dots span")
+        .forEach((dot, index) =>
+            dot.classList.toggle("active", index === position)
+        );
+}
+
+// Setup dots
+items.forEach((_, index) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+        currentIndex = index;
+        updateSlider(currentIndex);
+    });
+    dotsContainer.appendChild(dot);
+});
+
+updateSlider(currentIndex); // set first dot active
+
+document.querySelector(".next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateSlider(currentIndex);
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateSlider(currentIndex);
+});
+
+// Optional: update active dot on scroll
+container.addEventListener("scroll", () => {
+    const scrollLeft = container.scrollLeft;
+    const itemWidth = items[0].offsetWidth + 16;
+    const index = Math.round(scrollLeft / itemWidth);
+    if (index !== currentIndex) {
+        currentIndex = index;
+        updateSlider(currentIndex);
+    }
+});
+  
 const buttons = document.querySelectorAll(".tab-btn");
 const contents = document.querySelectorAll(".feature-content");
 

@@ -51,14 +51,39 @@ html {
 }
 
 .heroBanner header {
+  position: relative;
   padding: 3rem 1em 2em 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  z-index: 1000;
 }
 .heroBanner header .hamburger {
   display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1100;
+  position: relative;
+}
+.heroBanner header .hamburger.open::before {
+  content: "×";
+  font-size: 2.5rem;
+}
+.heroBanner header .mobileMenu {
+  display: flex;
+}
+.heroBanner header .mobileMenu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.heroBanner header .mobileMenu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
 }
 .heroBanner header .mobileRight a {
   color: #db3722;
@@ -68,12 +93,48 @@ html {
   padding: 0.5em 2em;
   font-size: 1.3em;
 }
-
 @media (max-width: 768px) {
   .heroBanner header .hamburger {
     display: block;
   }
+  .heroBanner header .mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .heroBanner header .mobileMenu ul {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .heroBanner header .mobileMenu ul li a {
+    color: #000;
+    font-size: 1.5rem;
+  }
+  .heroBanner header .mobileMenu.open {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+  }
+  .heroBanner header .mobileRight {
+    display: none;
+  }
+  .heroBanner header body.menu-open {
+    overflow: hidden;
+  }
 }
+
 footer {
   color: white;
   padding: 20rem 0 4em 0;
@@ -184,7 +245,7 @@ nav ul {
   align-items: center;
 }
 nav ul li {
-  padding: 0 2em;
+  padding: 0 1em;
 }
 nav ul li a {
   color: #fff;
@@ -933,7 +994,7 @@ main .contact .form {
   grid-template-columns: minmax(200px, 500px) 1fr;
 }
 main .contact .form article {
-  background: url(/assets/img/contact.png);
+  background-image: url("../assets/img/contact.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1071,7 +1132,20 @@ main .contact .form .inner .input-row .input-group:nth-child(2) {
   grid-template-columns: minmax(auto, 31%) minmax(auto, 68%);
   align-items: center;
 }
+main .slider {
+  display: none;
+}
 @media (max-width: 768px) {
+  main .heroBanner .objects img:nth-child(2) {
+    bottom: 35px;
+    left: -380px;
+  }
+  main .heroBanner .objects img:nth-child(3) {
+    right: -100px;
+  }
+  main .heroBanner .objects .object4 {
+    display: none;
+  }
   main .aboutUs,
   main .aboutUs2 {
     grid-template-columns: 1fr;
@@ -1092,14 +1166,96 @@ main .contact .form .inner .input-row .input-group:nth-child(2) {
   main .ourServices .ourServicesContent {
     flex-direction: column;
   }
+  main .serviceList {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 0; /* ✅ remove padding here */
+    scroll-padding-left: 10rem; /* ✅ ensure scroll starts from first item */
+  }
+  main .serviceList > div {
+    flex: 0 0 90%; /* makes each slide take 90% of screen */
+    min-width: 90%;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-left: 1rem;
+  }
+  main main .serviceList > div:last-child {
+    margin-right: 1rem; /* ✅ spacing at end */
+  }
+  main .serviceList::-webkit-scrollbar {
+    display: none; /* hide scrollbar for cleaner mobile look */
+  }
+  main .slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  main .slider-controls button {
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  main .dots {
+    display: flex;
+    gap: 6px;
+  }
+  main .dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    display: block;
+    cursor: pointer;
+  }
+  main .dots span.active {
+    background: #333;
+  }
   main .pricing .imgContent {
     flex-direction: column;
   }
   main .contact .form {
     grid-template-columns: 1fr;
   }
-  main .object4 {
-    display: none;
+  main .contact .form .inner .input-row {
+    flex-direction: column;
+  }
+  main .contact .form .inner .input-row .input-group {
+    grid-template-columns: 1fr !important;
+  }
+  main .contact .form .inner .form-container .input-group {
+    grid-template-columns: 1fr !important;
+  }
+  main .contact .form .inner .form-container .form-section {
+    grid-template-columns: 1fr;
+  }
+  main .contact .form .inner .form-container .form-section .option-group {
+    flex-direction: column;
+  }
+  main .slider {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    margin: auto;
+  }
+  main .slider .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+  main .slider .slides .slide {
+    min-width: 100%;
+    height: 300px;
+    object-fit: cover;
   }
 }
 

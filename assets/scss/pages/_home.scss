@@ -752,7 +752,7 @@ main {
       @include mixins.grid-stretch;
       grid-template-columns: minmax(200px, 500px) 1fr;
       article {
-        background: url(/assets/img/contact.png);
+        background-image: url("../assets/img/contact.png");
         @include mixins.bg-center-cover-no-repeat;
         border-top-left-radius: 2em;
         border-bottom-left-radius: 2em;
@@ -889,7 +889,24 @@ main {
       }
     }
   }
+  .slider {
+    display: none;
+  }
   @media (max-width: 768px) {
+    .heroBanner {
+      .objects {
+        img:nth-child(2) {
+          bottom: 35px;
+          left: -380px;
+        }
+        img:nth-child(3) {
+          right: -100px;
+        }
+        .object4 {
+          display: none;
+        }
+      }
+    }
     .aboutUs,
     .aboutUs2 {
       grid-template-columns: 1fr;
@@ -922,6 +939,69 @@ main {
         flex-direction: column;
       }
     }
+
+    .serviceList {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      padding: 0;              /* ✅ remove padding here */
+      scroll-padding-left: 10rem; /* ✅ ensure scroll starts from first item */
+    }
+
+    .serviceList > div {
+      flex: 0 0 90%;                  /* makes each slide take 90% of screen */
+      min-width: 90%;
+      scroll-snap-align: start;
+      box-sizing: border-box;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-left: 1rem;    
+    }
+    main .serviceList > div:last-child {
+      margin-right: 1rem;            /* ✅ spacing at end */
+    }
+
+    .serviceList::-webkit-scrollbar {
+      display: none; /* hide scrollbar for cleaner mobile look */
+    }
+
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .slider-controls button {
+      font-size: 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dots {
+      display: flex;
+      gap: 6px;
+    }
+    
+    .dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      display: block;
+      cursor: pointer;
+    }
+    
+    .dots span.active {
+      background: #333;
+    }
+    
+
     .pricing {
       .imgContent {
         flex-direction: column;
@@ -930,11 +1010,43 @@ main {
     .contact {
       .form {
         grid-template-columns: 1fr;
+        .inner {
+          .input-row {
+            flex-direction: column;
+            .input-group {
+              grid-template-columns: 1fr !important;
+            }
+          }
+          .form-container {
+            .input-group {
+              grid-template-columns: 1fr !important;
+            }
+            .form-section {
+              grid-template-columns: 1fr;
+              .option-group {
+                flex-direction: column;
+              }
+            }
+          }
+        }
       }
     }
-
-    .object4 {
-      display: none;
+    .slider {
+      position: relative;
+      width: 600px;
+      height: 300px;
+      overflow: hidden;
+      margin: auto;
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        .slide {
+          min-width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+      }
     }
   }
 }
@@ -944,7 +1056,7 @@ main {
       flex-direction: column;
       align-items: center;
       gap: 2em;
-      .copyright{
+      .copyright {
         order: 2;
       }
       #backToTop {
