@@ -2,6 +2,9 @@
 @use "../abstracts/variables";
 
 main {
+  // img {
+  //   width: 100%;
+  // }
   //****HERO SECTION****//
   .heroBanner {
     background-image: url("../assets/img/hero-banner.png");
@@ -35,14 +38,14 @@ main {
       padding: 10em;
       text-align: center;
       h1 {
-        font-size: 5em;
+        font-size: clamp(2rem, 1.3846rem + 3.0769vw, 6rem);
         color: variables.$white;
         font-weight: 500;
         text-transform: uppercase;
         line-height: 1.2em;
       }
       p {
-        font-size: 1.6em;
+        font-size: clamp(1rem, 0.8769rem + 0.6154vw, 1.8rem);
         color: variables.$white;
         font-weight: 200;
         white-space: pre-line;
@@ -54,7 +57,7 @@ main {
         border-radius: 2em;
         padding: 0.7em 1.2em;
         color: variables.$white;
-        font-size: 1.2em;
+        font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
         font-weight: 200;
         @include mixins.anchorEffects;
       }
@@ -70,7 +73,7 @@ main {
     padding: 7em 0 0 0;
 
     h2 {
-      font-size: 3em;
+      font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
       // white-space: pre-line;
       color: variables.$voilet;
       font-weight: 600;
@@ -81,7 +84,7 @@ main {
       }
     }
     p {
-      font-size: 1.2em;
+      font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
       // color: variables.$darkgrey;
       font-weight: 300;
       line-height: 2em;
@@ -109,11 +112,12 @@ main {
 
       .subText {
         color: variables.$orange;
-        font-size: 1.5em;
+        font-size: clamp(1.2rem, 0.9692rem + 0.1538vw, 1.5rem);
+
         font-weight: 600;
       }
       h2 {
-        font-size: 3em;
+        font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
         // white-space: pre-line;
         color: variables.$darkgrey;
         font-weight: 500;
@@ -122,7 +126,7 @@ main {
         padding-right: 4.5em;
       }
       p {
-        font-size: 0.9em;
+        font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
         color: variables.$darkgrey;
         font-weight: 400;
         line-height: 1.5em;
@@ -169,7 +173,7 @@ main {
             border-radius: 2em;
           }
           h3 {
-            font-size: 1.2em;
+            font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
             color: variables.$orange;
             margin: 0.8em 0 0.5em;
           }
@@ -184,7 +188,7 @@ main {
             border-radius: 2em;
           }
           h3 {
-            font-size: 1.2em;
+            font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
             color: variables.$golden;
             margin: 0.8em 0 0.5em;
           }
@@ -199,7 +203,7 @@ main {
             border-radius: 2em;
           }
           h3 {
-            font-size: 1.2em;
+            font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
             color: variables.$voilet;
             margin: 0.8em 0 0.5em;
           }
@@ -234,7 +238,7 @@ main {
     .mission {
       span {
         color: variables.$darkgrey;
-        font-size: 1.2em;
+        font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
         font-weight: 600;
       }
       .imgContent {
@@ -242,13 +246,13 @@ main {
         margin-bottom: 4em;
 
         h3 {
-          font-size: 1.5em;
+          font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
           color: variables.$voilet;
           margin: 0.8em 0 0.5em;
           font-weight: 500;
         }
         p {
-          font-size: 0.9em;
+          font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
           color: variables.$darkgrey;
           font-weight: 400;
           line-height: 1.5em;
@@ -264,7 +268,7 @@ main {
         li {
           flex: 1 1 48%;
           position: relative;
-          font-size: 0.9em;
+          font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
           font-weight: 400;
           padding: 1em 0 1em 2em;
           &::before {
@@ -300,11 +304,11 @@ main {
     padding-top: 5em;
     .subText {
       color: variables.$orange;
-      font-size: 1.5em !important;
+      font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem) !important;
       font-weight: 600;
     }
     h2 {
-      font-size: 3em;
+      font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
       // white-space: pre-line;
       color: variables.$voilet;
       font-weight: 600;
@@ -316,13 +320,13 @@ main {
       @include mixins.flex-center;
       text-align: left;
       h3 {
-        font-size: 1.5em;
+        font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
         color: variables.$darkgrey;
         margin: 0.8em 0 0.5em;
         font-weight: 600;
       }
       p {
-        font-size: 1.2em;
+        font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
         color: variables.$darkgrey;
         font-weight: 400;
         line-height: 1.8em;
@@ -347,7 +351,7 @@ main {
           border-radius: 2em;
         }
         h3 {
-          font-size: 1.2em;
+          font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
           color: variables.$orange;
           margin: 0.8em 0 0.5em;
         }
@@ -393,18 +397,18 @@ main {
       border-bottom: 1px solid variables.$lightgrey;
       span {
         color: variables.$orange;
-        font-size: 1.5em;
+        font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
         font-weight: 600;
       }
       h2 {
-        font-size: 3em;
+        font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
         color: variables.$darkgrey;
         font-weight: 600;
         line-height: 1.2em;
         margin-top: 0.7em;
       }
       p {
-        font-size: 1.5em;
+        font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
         color: variables.$darkgrey;
         font-weight: 400;
         line-height: 1.5em;
@@ -415,7 +419,7 @@ main {
     .pricingTable {
       text-align: center;
       p {
-        font-size: 1.2em;
+        font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
         font-weight: 300;
         line-height: 1.5em;
       }
@@ -433,7 +437,7 @@ main {
           position: relative;
           // overflow: hidden;
           z-index: 1;
-
+          display: block !important;
           .firstSec {
             @include mixins.flex-space-bw;
             align-items: start;
@@ -441,11 +445,11 @@ main {
             padding: 0 1em;
             h2 {
               margin: 0;
-              font-size: 1.5rem;
+              font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
             }
 
             .description {
-              font-size: 1em;
+              font-size: clamp(1rem, 1.2692rem + 1.1538vw, 1.2rem);
               color: variables.$darkgrey;
               margin-bottom: 1rem;
               font-weight: 400;
@@ -492,18 +496,18 @@ main {
               width: 98%;
               gap: 0.5em;
               .currency {
-                font-size: 1.2rem;
+                font-size: clamp(1rem, 1.2692rem + 1.1538vw, 1.2rem);
                 vertical-align: super;
                 color: variables.$white;
                 font-weight: 500;
               }
               .amount {
                 color: variables.$white !important;
-                font-size: 3em;
+                font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
                 font-weight: bold;
               }
               .unit {
-                font-size: 1rem;
+                font-size: clamp(1rem, 1.2692rem + 1.1538vw, 1.2rem);
                 margin-left: 0.25rem;
                 color: variables.$white;
                 font-weight: 500;
@@ -540,7 +544,7 @@ main {
               cursor: pointer;
               transition: 0.3s;
               width: 100%;
-              font-size: 1.2em;
+              font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
               background-color: transparent;
               border: 1px solid transparent;
               // &:hover {
@@ -605,7 +609,6 @@ main {
             color: white;
             padding: 0.5em 1.2em;
             border-radius: 20px;
-            font-size: 1.1rem;
             font-weight: 300;
             box-shadow: 0 10px 10px #d3d7da;
           }
@@ -660,7 +663,7 @@ main {
   .work {
     p {
       color: variables.$orange;
-      font-size: 1.5em;
+      font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
       font-weight: 600;
       text-align: center;
     }
@@ -669,7 +672,7 @@ main {
       grid-template-columns: 1fr 1fr;
       padding: 5em 0 0 0;
       h2 {
-        font-size: 3em;
+        font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
         color: variables.$golden;
         font-weight: 400;
         line-height: 1.2em;
@@ -677,7 +680,7 @@ main {
         margin-bottom: 1em;
       }
       h3 {
-        font-size: 3em;
+        font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
         color: variables.$darkgrey;
         font-weight: 400;
         line-height: 1.2em;
@@ -712,7 +715,7 @@ main {
           }
         }
         p {
-          font-size: 1.2em !important;
+          font-size: clamp(1rem, 1.1538rem + 0.2308vw, 1.2rem) !important;
           color: variables.$black;
           font-weight: 400;
           margin-top: 1em;
@@ -735,11 +738,11 @@ main {
     padding-top: 5em;
     span {
       color: variables.$orange;
-      font-size: 1.5em !important;
+      font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem) !important;
       font-weight: 600;
     }
     h2 {
-      font-size: 3em;
+      font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
       // white-space: pre-line;
       color: variables.$voilet;
       font-weight: 600;
@@ -758,7 +761,7 @@ main {
         border-bottom-left-radius: 2em;
         padding: 4em 5em;
         h3 {
-          font-size: 2em;
+          font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
           color: variables.$white;
           font-weight: 400;
           line-height: 1.5em;
@@ -863,7 +866,7 @@ main {
             border-radius: 0.7em;
             padding: 0.8em 1em;
             width: 200px;
-            font-size: 1.2em;
+            font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
             cursor: pointer;
             margin-top: 10px;
             &:hover {
@@ -889,7 +892,8 @@ main {
       }
     }
   }
-  .slider {
+  .slider,
+  .mobilePlanSelector {
     display: none;
   }
   @media (max-width: 768px) {
@@ -946,22 +950,22 @@ main {
       display: flex;
       flex-wrap: nowrap;
       gap: 1rem;
-      padding: 0;              /* ✅ remove padding here */
+      padding: 0; /* ✅ remove padding here */
       scroll-padding-left: 10rem; /* ✅ ensure scroll starts from first item */
     }
 
     .serviceList > div {
-      flex: 0 0 90%;                  /* makes each slide take 90% of screen */
+      flex: 0 0 90%; /* makes each slide take 90% of screen */
       min-width: 90%;
       scroll-snap-align: start;
       box-sizing: border-box;
       background: #fff;
       padding: 1rem;
       border-radius: 10px;
-      margin-left: 1rem;    
+      margin-left: 1rem;
     }
     main .serviceList > div:last-child {
-      margin-right: 1rem;            /* ✅ spacing at end */
+      margin-right: 1rem; /* ✅ spacing at end */
     }
 
     .serviceList::-webkit-scrollbar {
@@ -975,19 +979,19 @@ main {
       gap: 10px;
       margin-top: 10px;
     }
-    
+
     .slider-controls button {
       font-size: 24px;
       background: transparent;
       border: none;
       cursor: pointer;
     }
-    
+
     .dots {
       display: flex;
       gap: 6px;
     }
-    
+
     .dots span {
       width: 10px;
       height: 10px;
@@ -996,11 +1000,10 @@ main {
       display: block;
       cursor: pointer;
     }
-    
+
     .dots span.active {
       background: #333;
     }
-    
 
     .pricing {
       .imgContent {
@@ -1047,6 +1050,27 @@ main {
           object-fit: cover;
         }
       }
+    }
+
+    .pricing-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mobilePlanSelector {
+      display: block;
+      width: 100%;
+      margin-bottom: 2em;
+      text-align: center;
+
+      select {
+        font-size: 1.1rem;
+        padding: 0.5em 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+    }
+    img {
     }
   }
 }

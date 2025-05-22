@@ -293,14 +293,14 @@ main .heroBanner .heroBannerContent {
   text-align: center;
 }
 main .heroBanner .heroBannerContent h1 {
-  font-size: 5em;
+  font-size: clamp(2rem, 1.3846rem + 3.0769vw, 6rem);
   color: #fff;
   font-weight: 500;
   text-transform: uppercase;
   line-height: 1.2em;
 }
 main .heroBanner .heroBannerContent p {
-  font-size: 1.6em;
+  font-size: clamp(1rem, 0.8769rem + 0.6154vw, 1.8rem);
   color: #fff;
   font-weight: 200;
   white-space: pre-line;
@@ -312,7 +312,7 @@ main .heroBanner .heroBannerContent a {
   border-radius: 2em;
   padding: 0.7em 1.2em;
   color: #fff;
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   font-weight: 200;
   display: inline-block;
   vertical-align: middle;
@@ -361,7 +361,7 @@ main .aboutUs {
   padding: 7em 0 0 0;
 }
 main .aboutUs h2 {
-  font-size: 3em;
+  font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
   color: #309baf;
   font-weight: 600;
   line-height: 1.2em;
@@ -371,7 +371,7 @@ main .aboutUs h2 span {
   font-weight: 500;
 }
 main .aboutUs p {
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   font-weight: 300;
   line-height: 2em;
   margin-top: 1em;
@@ -399,11 +399,11 @@ main .aboutUs2 .aboutUs2Content {
 }
 main .aboutUs2 .aboutUs2Content .subText {
   color: #db3722;
-  font-size: 1.5em;
+  font-size: clamp(1.2rem, 0.9692rem + 0.1538vw, 1.5rem);
   font-weight: 600;
 }
 main .aboutUs2 .aboutUs2Content h2 {
-  font-size: 3em;
+  font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
   color: #a5a5a5;
   font-weight: 500;
   line-height: 1.2em;
@@ -411,7 +411,7 @@ main .aboutUs2 .aboutUs2Content h2 {
   padding-right: 4.5em;
 }
 main .aboutUs2 .aboutUs2Content p {
-  font-size: 0.9em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   color: #a5a5a5;
   font-weight: 400;
   line-height: 1.5em;
@@ -455,7 +455,7 @@ main .aboutUs2 .aboutUs2Content .features #feature1 span {
   border-radius: 2em;
 }
 main .aboutUs2 .aboutUs2Content .features #feature1 h3 {
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   color: #db3722;
   margin: 0.8em 0 0.5em;
 }
@@ -470,7 +470,7 @@ main .aboutUs2 .aboutUs2Content .features #feature2 span {
   border-radius: 2em;
 }
 main .aboutUs2 .aboutUs2Content .features #feature2 h3 {
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   color: #edaa29;
   margin: 0.8em 0 0.5em;
 }
@@ -485,7 +485,7 @@ main .aboutUs2 .aboutUs2Content .features #feature3 span {
   border-radius: 2em;
 }
 main .aboutUs2 .aboutUs2Content .features #feature3 h3 {
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   color: #309baf;
   margin: 0.8em 0 0.5em;
 }
@@ -510,7 +510,7 @@ main .aboutUs2 .aboutUs2Content .feature-box.active {
 }
 main .aboutUs2 .mission span {
   color: #a5a5a5;
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   font-weight: 600;
 }
 main .aboutUs2 .mission .imgContent {
@@ -520,13 +520,13 @@ main .aboutUs2 .mission .imgContent {
   margin-bottom: 4em;
 }
 main .aboutUs2 .mission .imgContent h3 {
-  font-size: 1.5em;
+  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
   color: #309baf;
   margin: 0.8em 0 0.5em;
   font-weight: 500;
 }
 main .aboutUs2 .mission .imgContent p {
-  font-size: 0.9em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   color: #a5a5a5;
   font-weight: 400;
   line-height: 1.5em;
@@ -542,7 +542,7 @@ main .aboutUs2 .mission .features-list {
 main .aboutUs2 .mission .features-list li {
   flex: 1 1 48%;
   position: relative;
-  font-size: 0.9em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   font-weight: 400;
   padding: 1em 0 1em 2em;
   /* Different bullet colors */
@@ -575,11 +575,11 @@ main .ourServices {
 }
 main .ourServices .subText {
   color: #db3722;
-  font-size: 1.5em !important;
+  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem) !important;
   font-weight: 600;
 }
 main .ourServices h2 {
-  font-size: 3em;
+  font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
   color: #309baf;
   font-weight: 600;
   line-height: 1.2em;
@@ -593,13 +593,13 @@ main .ourServices .ourServicesContent {
   text-align: left;
 }
 main .ourServices .ourServicesContent h3 {
-  font-size: 1.5em;
+  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
   color: #a5a5a5;
   margin: 0.8em 0 0.5em;
   font-weight: 600;
 }
 main .ourServices .ourServicesContent p {
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   color: #a5a5a5;
   font-weight: 400;
   line-height: 1.8em;
@@ -629,7 +629,7 @@ main .ourServices .serviceList div span {
   border-radius: 2em;
 }
 main .ourServices .serviceList div h3 {
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   color: #db3722;
   margin: 0.8em 0 0.5em;
 }
@@ -667,18 +667,18 @@ main .pricing .imgContent {
 }
 main .pricing .imgContent span {
   color: #db3722;
-  font-size: 1.5em;
+  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
   font-weight: 600;
 }
 main .pricing .imgContent h2 {
-  font-size: 3em;
+  font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
   color: #a5a5a5;
   font-weight: 600;
   line-height: 1.2em;
   margin-top: 0.7em;
 }
 main .pricing .imgContent p {
-  font-size: 1.5em;
+  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
   color: #a5a5a5;
   font-weight: 400;
   line-height: 1.5em;
@@ -688,7 +688,7 @@ main .pricing .pricingTable {
   text-align: center;
 }
 main .pricing .pricingTable p {
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   font-weight: 300;
   line-height: 1.5em;
 }
@@ -707,6 +707,7 @@ main .pricing .pricingTable .pricing-container .plan {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1;
+  display: block !important;
 }
 main .pricing .pricingTable .pricing-container .plan .firstSec {
   display: flex;
@@ -718,10 +719,10 @@ main .pricing .pricingTable .pricing-container .plan .firstSec {
 }
 main .pricing .pricingTable .pricing-container .plan .firstSec h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
 }
 main .pricing .pricingTable .pricing-container .plan .firstSec .description {
-  font-size: 1em;
+  font-size: clamp(1rem, 1.2692rem + 1.1538vw, 1.2rem);
   color: #a5a5a5;
   margin-bottom: 1rem;
   font-weight: 400;
@@ -769,18 +770,18 @@ main .pricing .pricingTable .pricing-container .plan .price p {
   gap: 0.5em;
 }
 main .pricing .pricingTable .pricing-container .plan .price p .currency {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.2692rem + 1.1538vw, 1.2rem);
   vertical-align: super;
   color: #fff;
   font-weight: 500;
 }
 main .pricing .pricingTable .pricing-container .plan .price p .amount {
   color: #fff !important;
-  font-size: 3em;
+  font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
   font-weight: bold;
 }
 main .pricing .pricingTable .pricing-container .plan .price p .unit {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.2692rem + 1.1538vw, 1.2rem);
   margin-left: 0.25rem;
   color: #fff;
   font-weight: 500;
@@ -812,7 +813,7 @@ main .pricing .pricingTable .pricing-container .plan .selectPlan button {
   cursor: pointer;
   transition: 0.3s;
   width: 100%;
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   background-color: transparent;
   border: 1px solid transparent;
 }
@@ -860,7 +861,6 @@ main .pricing .pricingTable .diamond .mostPopular a {
   color: white;
   padding: 0.5em 1.2em;
   border-radius: 20px;
-  font-size: 1.1rem;
   font-weight: 300;
   box-shadow: 0 10px 10px #d3d7da;
 }
@@ -900,7 +900,7 @@ main .pricing .pricingTable .customPlanNote p a {
 }
 main .work p {
   color: #db3722;
-  font-size: 1.5em;
+  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
   font-weight: 600;
   text-align: center;
 }
@@ -910,7 +910,7 @@ main .work .workContent {
   padding: 5em 0 0 0;
 }
 main .work .workContent h2 {
-  font-size: 3em;
+  font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
   color: #edaa29;
   font-weight: 400;
   line-height: 1.2em;
@@ -918,7 +918,7 @@ main .work .workContent h2 {
   margin-bottom: 1em;
 }
 main .work .workContent h3 {
-  font-size: 3em;
+  font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
   color: #a5a5a5;
   font-weight: 400;
   line-height: 1.2em;
@@ -955,7 +955,7 @@ main .work .workContent .portfolio ul li:last-child {
   padding: 0 21em;
 }
 main .work .workContent .portfolio p {
-  font-size: 1.2em !important;
+  font-size: clamp(1rem, 1.1538rem + 0.2308vw, 1.2rem) !important;
   color: #000;
   font-weight: 400;
   margin-top: 1em;
@@ -975,11 +975,11 @@ main .contact {
 }
 main .contact span {
   color: #db3722;
-  font-size: 1.5em !important;
+  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem) !important;
   font-weight: 600;
 }
 main .contact h2 {
-  font-size: 3em;
+  font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
   color: #309baf;
   font-weight: 600;
   line-height: 1.2em;
@@ -1003,7 +1003,7 @@ main .contact .form article {
   padding: 4em 5em;
 }
 main .contact .form article h3 {
-  font-size: 2em;
+  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
   color: #fff;
   font-weight: 400;
   line-height: 1.5em;
@@ -1111,7 +1111,7 @@ main .contact .form .inner .form-container .send-btn {
   border-radius: 0.7em;
   padding: 0.8em 1em;
   width: 200px;
-  font-size: 1.2em;
+  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   cursor: pointer;
   margin-top: 10px;
 }
@@ -1132,7 +1132,8 @@ main .contact .form .inner .input-row .input-group:nth-child(2) {
   grid-template-columns: minmax(auto, 31%) minmax(auto, 68%);
   align-items: center;
 }
-main .slider {
+main .slider,
+main .mobilePlanSelector {
   display: none;
 }
 @media (max-width: 768px) {
@@ -1256,6 +1257,22 @@ main .slider {
     min-width: 100%;
     height: 300px;
     object-fit: cover;
+  }
+  main .pricing-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  main .mobilePlanSelector {
+    display: block;
+    width: 100%;
+    margin-bottom: 2em;
+    text-align: center;
+  }
+  main .mobilePlanSelector select {
+    font-size: 1.1rem;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
   }
 }
 
