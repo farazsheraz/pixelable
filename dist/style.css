@@ -1164,7 +1164,13 @@ main .mobilePlanSelector {
   main .work .workContent div:first-child img {
     width: 200px;
   }
-  main .work .workContent .portfolio img {
+  main .work .workContent .portfolio ul li {
+    padding: 0.5em !important;
+  }
+  main .work .workContent .portfolio ul li img {
+    width: 100px;
+  }
+  main .work .workContent .portfolio .lamp {
     width: auto;
   }
   main .aboutUs2 .aboutUs2Content h2 {
