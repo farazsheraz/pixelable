@@ -5,7 +5,11 @@
     <meta name="description" content="Pixelable" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/style.css" preload />
-    <script async src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
 
     <title>Pixelable</title>
   </head>
@@ -232,8 +236,9 @@
               </p>
             </div>
           </div>
+          <!-- OUR SERVICES DESKTOP -->
           <div class="serviceList">
-            <div>
+            <div class="item">
               <span>
                 <img src="assets/img/cart.png" class="feature-icon" alt="" />
               </span>
@@ -246,7 +251,7 @@
                 Shopify, Commerce and custom solutions.
               </p>
             </div>
-            <div>
+            <div class="item">
               <span>
                 <img src="assets/img/design.png" class="feature-icon" alt="" />
               </span>
@@ -259,7 +264,7 @@
                 journeys that boost engagement and conversions.
               </p>
             </div>
-            <div>
+            <div class="item">
               <span>
                 <img src="assets/img/cutting.png" class="feature-icon" alt="" />
               </span>
@@ -272,7 +277,59 @@
                 better performance & improved functionality.
               </p>
             </div>
-            <div>
+            <div class="item">
+              <span>
+                <img src="assets/img/seo.png" class="feature-icon" alt="" />
+              </span>
+              <h3>SEO <br />Optimization</h3>
+              <p>
+                On page & technical SEO to ensure your website is discoverable,
+                fast & ranks high on search engines.
+              </p>
+            </div>
+          </div>
+          <!-- OUR SERVICES MOBILE -->
+          <div class="serviceListMob">
+            <div class="item">
+              <span>
+                <img src="assets/img/cart.png" class="feature-icon" alt="" />
+              </span>
+              <h3>
+                E-Commerce <br />
+                Development
+              </h3>
+              <p>
+                Scalable and secure online stores which built on platforms like
+                Shopify, Commerce and custom solutions.
+              </p>
+            </div>
+            <div class="item">
+              <span>
+                <img src="assets/img/design.png" class="feature-icon" alt="" />
+              </span>
+              <h3>
+                User Experience <br />
+                Design
+              </h3>
+              <p>
+                Intuitive, user-first interfaces to create seamless user
+                journeys that boost engagement and conversions.
+              </p>
+            </div>
+            <div class="item">
+              <span>
+                <img src="assets/img/cutting.png" class="feature-icon" alt="" />
+              </span>
+              <h3>
+                Cutting edge <br />
+                Website Redesign
+              </h3>
+              <p>
+                Modernize outdated sites with the most cutting edge visuals,
+                better performance & improved functionality.
+              </p>
+            </div>
+            <div class="item">
               <span>
                 <img src="assets/img/seo.png" class="feature-icon" alt="" />
               </span>
@@ -357,7 +414,11 @@
                       sized businesses.
                     </p>
                   </div>
-                  <img src="assets/img/diamond.png" alt="diamond" width="auto"/>
+                  <img
+                    src="assets/img/diamond.png"
+                    alt="diamond"
+                    width="auto"
+                  />
                 </div>
 
                 <div class="price">
@@ -545,6 +606,7 @@
               <form class="form-container" onsubmit="handleSubmit(event)">
                 <div class="form-section">
                   <div class="form-section-label">Selected Plan</div>
+                  <!-- Desktop version -->
                   <div class="option-group" id="selected-plan">
                     <button class="option-btn" data-value="Silver">
                       Silver
@@ -557,10 +619,21 @@
                       Custom
                     </button>
                   </div>
+
+                  <!-- Mobile version -->
+                  <div class="option-dropdown" id="selected-plan-dropdown">
+                    <select id="service-select">
+                      <option value="Silver">Silver</option>
+                      <option value="Diamond">Diamond</option>
+                      <option value="Gold">Gold</option>
+                      <option value="Custom">Custom</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div class="form-section">
                   <div class="form-section-label">Plan Budget</div>
+                  <!-- Desktop version -->
                   <div class="option-group" id="plan-budget">
                     <button class="option-btn" data-value="2500">
                       $ 2500 USD
@@ -573,10 +646,20 @@
                     </button>
                     <button class="option-btn" data-value="tbd">TBD</button>
                   </div>
+                  <!-- Mobile version -->
+                  <div class="option-dropdown" id="plan-budget-dropdown">
+                    <select id="service-select">
+                      <option value="2500">$ 2500 USD</option>
+                      <option value=" 7500">$ 700 USD</option>
+                      <option value=" 15000">$ 15000 USD</option>
+                      <option value="tbd">TBD</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div class="form-section">
                   <div class="form-section-label">Select Services</div>
+                  <!-- Desktop version -->
                   <div class="option-group" id="select-services">
                     <button class="option-btn" data-value="UI/UX">UI/UX</button>
                     <button class="option-btn" data-value="Animation">
@@ -586,6 +669,15 @@
                       Wordpress
                     </button>
                     <button class="option-btn" data-value="tbd">TBD</button>
+                  </div>
+                  <!-- Mobile version -->
+                  <div class="option-dropdown" id="select-services-dropdown">
+                    <select id="service-select">
+                      <option value="UI/UX">UI/UX</option>
+                      <option value="Animation">Animation</option>
+                      <option value="Wordpress">Wordpress</option>
+                      <option value="tbd">TBD</option>
+                    </select>
                   </div>
                 </div>
 
@@ -696,6 +788,10 @@
 
     <!-- GSAP ScrollTrigger Plugin --->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script async src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <script async src="assets/script.js"></script>
   </body>
 </html>

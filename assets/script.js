@@ -106,6 +106,7 @@ document.querySelector('.send-btn').addEventListener('click', function () {
             console.error(error);
         });
 });
+
 //BANNER OBJECTS ANIMATION GSAP
 // Floating up and down
 gsap.to(".object2", {
@@ -183,6 +184,7 @@ gsap.utils.toArray(".project").forEach((project, i) => {
         }
     );
 });
+
 //Pricing 
 const selector = document.getElementById('planSelector');
 const plans = document.querySelectorAll('.plan');
@@ -200,3 +202,14 @@ selector.addEventListener('change', function () {
 // Initial load - show only silver
 showSelectedPlan('silver');
 
+//SERVICE LIST
+$('.serviceListMob').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    dots: true,
+    autoplay: true,
+    prevArrow: "<img src='./assets/img/prev.svg' alt='prevBtn'/>",
+    nextArrow: "<img src='./assets/img/next.svg' alt='nextBtn'/>"
+});

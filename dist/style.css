@@ -554,7 +554,7 @@ main .aboutUs2 .mission .features-list li::before {
   border-radius: 50%;
   position: absolute;
   left: 0;
-  top: 15px;
+  top: 25px;
   border: 2px solid #fff;
 }
 main .aboutUs2 .mission .features-list li.red::before {
@@ -606,19 +606,22 @@ main .ourServices .ourServicesContent p {
   white-space: pre-line;
   margin-top: -2em;
 }
-main .ourServices .serviceList {
+main .ourServices .serviceList,
+main .ourServices .serviceListMob {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1em;
 }
-main .ourServices .serviceList div {
+main .ourServices .serviceList .item,
+main .ourServices .serviceListMob .item {
   border: 1px solid #cacaca;
   border-radius: 2em;
   padding: 2em 2em;
   width: 20%;
 }
-main .ourServices .serviceList div span {
+main .ourServices .serviceList .item span,
+main .ourServices .serviceListMob .item span {
   background-color: #db3722;
   width: 75px;
   height: 55px;
@@ -628,27 +631,34 @@ main .ourServices .serviceList div span {
   margin: 0 auto;
   border-radius: 2em;
 }
-main .ourServices .serviceList div h3 {
+main .ourServices .serviceList .item h3,
+main .ourServices .serviceListMob .item h3 {
   font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   color: #db3722;
   margin: 0.8em 0 0.5em;
 }
-main .ourServices .serviceList div:nth-child(2) span {
+main .ourServices .serviceList .item:nth-child(2) span,
+main .ourServices .serviceListMob .item:nth-child(2) span {
   background-color: #db6f21;
 }
-main .ourServices .serviceList div:nth-child(2) h3 {
+main .ourServices .serviceList .item:nth-child(2) h3,
+main .ourServices .serviceListMob .item:nth-child(2) h3 {
   color: #db6f21;
 }
-main .ourServices .serviceList div:nth-child(3) span {
+main .ourServices .serviceList .item:nth-child(3) span,
+main .ourServices .serviceListMob .item:nth-child(3) span {
   background-color: #309baf;
 }
-main .ourServices .serviceList div:nth-child(3) h3 {
+main .ourServices .serviceList .item:nth-child(3) h3,
+main .ourServices .serviceListMob .item:nth-child(3) h3 {
   color: #309baf;
 }
-main .ourServices .serviceList div:nth-child(4) span {
+main .ourServices .serviceList .item:nth-child(4) span,
+main .ourServices .serviceListMob .item:nth-child(4) span {
   background-color: #edaa29;
 }
-main .ourServices .serviceList div:nth-child(4) h3 {
+main .ourServices .serviceList .item:nth-child(4) h3,
+main .ourServices .serviceListMob .item:nth-child(4) h3 {
   color: #edaa29;
 }
 main .bg-grey {
@@ -1031,6 +1041,9 @@ main .contact .form .inner p {
   text-align: left;
   color: #a5a5a5;
 }
+main .contact .form .inner .form-container {
+  /* Hide mobile dropdown by default */
+}
 main .contact .form .inner .form-container .form-section {
   margin-bottom: 20px;
   display: grid;
@@ -1118,6 +1131,9 @@ main .contact .form .inner .form-container .send-btn {
 main .contact .form .inner .form-container .send-btn:hover {
   background-color: #db3722;
 }
+main .contact .form .inner .form-container .option-dropdown {
+  display: none;
+}
 main .contact .form .inner .input-row {
   display: flex;
   gap: 15px;
@@ -1133,8 +1149,29 @@ main .contact .form .inner .input-row .input-group:nth-child(2) {
   align-items: center;
 }
 main .slider,
-main .mobilePlanSelector {
-  display: none;
+main .mobilePlanSelector,
+main .serviceListMob {
+  display: none !important;
+}
+main .serviceListMob ul.slick-dots {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: 110%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+main .serviceListMob ul.slick-dots button {
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  font-size: 0;
+  background-color: #d6d6d6;
+  border: 0;
+}
+main .serviceListMob ul.slick-dots .slick-active button {
+  background-color: #309baf !important;
 }
 @media (max-width: 768px) {
   main img {
@@ -1145,7 +1182,7 @@ main .mobilePlanSelector {
     left: -380px;
   }
   main .heroBanner .objects img:nth-child(3) {
-    right: -100px;
+    right: 0;
   }
   main .heroBanner .objects .object4 {
     display: none;
@@ -1160,6 +1197,8 @@ main .mobilePlanSelector {
   }
   main .work .workContent {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
   }
   main .work .workContent div:first-child img {
     width: 200px;
@@ -1181,28 +1220,19 @@ main .mobilePlanSelector {
   }
   main .ourServices .ourServicesContent {
     flex-direction: column;
+    text-align: center;
   }
   main .serviceList {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    padding: 0; /* ✅ remove padding here */
-    scroll-padding-left: 10rem; /* ✅ ensure scroll starts from first item */
+    display: none !important;
   }
   main .serviceList div span img {
     width: auto;
   }
-  main .serviceList > div {
-    flex: 0 0 90%; /* makes each slide take 90% of screen */
-    min-width: 90%;
-    scroll-snap-align: start;
-    box-sizing: border-box;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-left: 1rem;
+  main .serviceListMob {
+    display: block !important;
+  }
+  main .serviceListMob img {
+    width: auto;
   }
   main main .serviceList > div:last-child {
     margin-right: 1rem; /* ✅ spacing at end */
@@ -1250,6 +1280,15 @@ main .mobilePlanSelector {
   }
   main .contact .form {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  main .contact .form article {
+    order: 2;
+    border-radius: 2rem;
+  }
+  main .contact .form .inner {
+    border-radius: 2rem;
+    border-left: 2px solid #cacaca;
   }
   main .contact .form .inner .input-row {
     flex-direction: column;
@@ -1265,6 +1304,27 @@ main .mobilePlanSelector {
   }
   main .contact .form .inner .form-container .form-section .option-group {
     flex-direction: column;
+  }
+  main .contact .form .inner .form-container #select-services,
+  main .contact .form .inner .form-container #plan-budget,
+  main .contact .form .inner .form-container #selected-plan {
+    display: none !important;
+  }
+  main .contact .form .inner .form-container .option-dropdown {
+    display: block;
+  }
+  main .contact .form .inner .form-container .option-dropdown select {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    width: 100%;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 93%;
+    background-position-y: 11px;
   }
   main .contact .form .inner p img {
     width: auto;
