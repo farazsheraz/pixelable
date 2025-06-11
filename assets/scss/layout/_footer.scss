@@ -5,13 +5,16 @@ footer {
   padding: 20rem 0 4em 0;
   background-image: url("../assets/img/footer-banner.png");
   @include mixins.bg-center-cover-no-repeat;
+  background-position: unset;
 
   .container {
     @include mixins.flex-space-bw-end;
+    max-width: 1700px;
     .copyright {
       border-radius: 30px;
-      border: 0.5px solid variables.$white;
+      border: 0.5px solid #f5662e;
       padding: 0.5em 1em;
+      color: #ffc68f;
     }
     div {
       ul {
