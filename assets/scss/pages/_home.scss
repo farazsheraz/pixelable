@@ -795,18 +795,19 @@ main {
         @include mixins.bg-center-cover-no-repeat;
         border-top-left-radius: 2em;
         border-bottom-left-radius: 2em;
-        padding: 4em 5em;
+        padding: 2rem 5rem;
         h3 {
-          font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
+          font-size: 2rem;
           color: variables.$white;
           font-weight: 400;
           line-height: 1.5em;
-          margin-bottom: 1em;
+          margin-bottom: 2em;
         }
         a {
           color: variables.$white;
           @include mixins.flex-center;
           gap: 1em;
+          font-size: 1.33rem;
         }
       }
       .inner {
@@ -815,13 +816,13 @@ main {
         display: flex;
         flex-direction: column;
         gap: 2em;
-        border: 2px solid variables.$lightgrey;
+        border: 1px solid variables.$lightgrey;
         border-top-right-radius: 2em;
         border-bottom-right-radius: 2em;
         border-left: 0;
         p {
           text-align: left;
-          color: variables.$darkgrey;
+          color: #494949;
         }
         .form-container {
           .form-section {
@@ -839,9 +840,9 @@ main {
               gap: 8px;
               .option-btn {
                 flex: 1;
-                padding: 10px;
+                padding: 15px 10px;
                 border: 1px solid #ddd;
-                border-radius: 5px;
+                border-radius: 10px;
                 background: white;
                 font-size: 14px;
                 color: #333;
