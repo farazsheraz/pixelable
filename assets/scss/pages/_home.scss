@@ -435,17 +435,18 @@ main {
         color: variables.$orange;
         font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
         font-weight: 600;
+        font-size: 1.8rem;
       }
       h2 {
-        font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
-        color: variables.$darkgrey;
+        font-size: 3.5rem;
+        color: #7f7f7f;
         font-weight: 600;
         line-height: 1.2em;
         margin-top: 0.7em;
       }
       p {
         font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
-        color: variables.$darkgrey;
+        color: #7f7f7f;
         font-weight: 400;
         line-height: 1.5em;
         margin-top: 1em;
@@ -462,14 +463,14 @@ main {
 
       .pricing-container {
         @include mixins.flex-center;
-        margin: 3em 0;
+        margin: 3rem 0 6rem;
         .plan {
           background: variables.$white;
-          border-radius: 10px;
+          border-radius: 1rem;
           padding: 1.5rem;
           width: 375px;
           text-align: center;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 15px rgb(0 0 0 / 22%);
           position: relative;
           // overflow: hidden;
           z-index: 1;
@@ -532,18 +533,18 @@ main {
               width: 98%;
               gap: 0.5em;
               .currency {
-                font-size: clamp(1rem, 1.2692rem + 1.1538vw, 1.2rem);
+                font-size: 1.5rem;
                 vertical-align: super;
                 color: variables.$white;
                 font-weight: 500;
               }
               .amount {
                 color: variables.$white !important;
-                font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
+                font-size: 3rem;
                 font-weight: bold;
               }
               .unit {
-                font-size: clamp(1rem, 1.2692rem + 1.1538vw, 1.2rem);
+                font-size: 1.5rem;
                 margin-left: 0.25rem;
                 color: variables.$white;
                 font-weight: 500;
@@ -560,6 +561,7 @@ main {
 
             li {
               margin: 0 0 2rem 0;
+              font-weight: 300;
               &:before {
                 content: "\2713";
                 color: variables.$voilet;
@@ -570,7 +572,7 @@ main {
           }
 
           .selectPlan {
-            border-top: 1px solid variables.$darkgrey;
+            border-top: 1px solid variables.$lightgrey;
 
             button {
               margin-top: 1em;
@@ -608,6 +610,7 @@ main {
           button {
             border-color: variables.$orange !important;
             color: variables.$orange;
+            background-color: #fdf5f4 !important;
           }
         }
       }
@@ -634,7 +637,7 @@ main {
           button {
             border-color: variables.$voilet !important;
             color: variables.$voilet;
-            background-color: #fefbf4;
+            background-color: #ecf7fb !important;
           }
         }
 
@@ -669,6 +672,7 @@ main {
           button {
             border-color: variables.$golden !important;
             color: variables.$golden;
+            background-color: #fefbf4 !important;
           }
         }
       }
@@ -677,18 +681,18 @@ main {
         p {
           padding: 0.5em 1.2em;
           border: 1px solid variables.$golden;
-          border-radius: 1em;
+          border-radius: 0.7rem;
           background-color: #f9f6ef;
           width: 910px;
           margin: 0 auto;
           @include mixins.flex-center;
-          gap: 1em;
+          gap: 1rem;
           a {
             background-color: #eff1ec;
             color: variables.$voilet;
             border: 1px solid variables.$voilet;
-            border-radius: 0.5em;
-            padding: 0.5em 0.7em;
+            border-radius: 0.5rem;
+            padding: 0.2rem 0.7rem;
             font-weight: 600;
           }
         }
@@ -708,19 +712,18 @@ main {
       grid-template-columns: 1fr 1fr;
       padding: 5em 0 0 0;
       h2 {
-        font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
+        font-size: 3.5rem;
         color: variables.$golden;
         font-weight: 400;
-        line-height: 1.2em;
-        margin-top: 0.7em;
-        margin-bottom: 1em;
+        line-height: 1.2rem;
+        margin-bottom: 1rem;
       }
       h3 {
-        font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
+        font-size: 3.5rem;
         color: variables.$darkgrey;
         font-weight: 400;
-        line-height: 1.2em;
-        margin-top: 1em;
+        line-height: 1.2rem;
+        margin-top: 3rem;
       }
       .portfolio {
         ul {
@@ -728,8 +731,8 @@ main {
           li {
             grid-template-columns: 1fr 1fr;
             @include mixins.flex-center;
-            gap: 0.5em;
-            padding-bottom: 0.5em;
+            gap: 0.5rem;
+            padding-bottom: 0.5rem !important;
             img {
               transform: scale(0) translateY(100px);
               opacity: 0;
@@ -741,25 +744,36 @@ main {
           li:nth-child(3) {
             // grid-template-columns: 1fr 1fr 1fr;
             @include mixins.flex-center;
-            padding: 0 6em;
+            padding: 0 6rem;
           }
           li:nth-child(3) {
-            padding: 0 12em;
+            padding: 0 12rem;
           }
           li:last-child {
-            padding: 0 21em;
+            padding: 0 21rem;
           }
         }
         p {
           font-size: clamp(1rem, 1.1538rem + 0.2308vw, 1.2rem) !important;
           color: variables.$black;
           font-weight: 400;
-          margin-top: 1em;
+          margin-top: 1rem;
         }
         .lamp {
           margin: 0 auto;
           display: block;
-          margin-top: 1em;
+          margin-top: 1rem;
+        }
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          background-image: url("/assets/img/stars.svg");
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 3%;
+          height: 30px;
         }
       }
     }
