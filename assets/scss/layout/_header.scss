@@ -6,9 +6,9 @@
     position: relative;
     padding: 3rem 1em 2em 1em;
     @include mixins.flex-space-bw;
-    width: 100%;
+    // width: 100%;
     z-index: 1000;
-
+    // gap: 5rem;
     .hamburger {
       display: none;
       background: none;
@@ -45,7 +45,7 @@
         background-color: variables.$white;
         border: 1px solid variables.$white;
         border-radius: 2em;
-        padding: 0.5em 2em;
+        padding: 0.7em 2.5em;
         font-size: 1.3em;
       }
     }

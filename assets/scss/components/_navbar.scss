@@ -11,8 +11,26 @@ nav {
         text-transform: uppercase;
         font-size: 1.2em;
         font-weight: 300;
-        :hover {
-          background-color: aqua;
+        position: relative;
+        &:hover {
+          color: variables.$voilet;
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          background-image: url("../assets/img/active.svg");
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 1rem;
+          height: 1rem;
+          left: -26px;
+          top: 4px;
+          opacity: 0;
+        }
+        &.active::before {
+          opacity: 1;
+          filter: invert(1);
         }
       }
     }

@@ -35,7 +35,7 @@ main {
       @include mixins.flex-center;
       flex-direction: column;
       gap: 1em;
-      padding: 10em;
+      padding: 8rem 10em;
       text-align: center;
       h1 {
         font-size: clamp(2rem, 1.3846rem + 3.0769vw, 6rem);
@@ -48,7 +48,7 @@ main {
         font-size: clamp(1rem, 0.8769rem + 0.6154vw, 1.8rem);
         color: variables.$white;
         font-weight: 200;
-        white-space: pre-line;
+        width: 60%;
         line-height: 1.6em;
         margin-bottom: 2em;
       }
@@ -61,6 +61,40 @@ main {
         font-weight: 200;
         @include mixins.anchorEffects;
       }
+      .scrollMouse {
+        margin-top: 2rem;
+        position: relative;
+        -webkit-animation: mover 1s infinite alternate;
+        animation: mover 1s infinite alternate;
+        cursor: pointer;
+        &::before {
+          position: absolute;
+          content: "";
+          background-color: #ccc9ca;
+          width: 1px;
+          height: 130px;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          top: 105px;
+        }
+      }
+    }
+  }
+  @-webkit-keyframes mover {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes mover {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
     }
   }
   //****ABOUT SECTION*****//
@@ -73,7 +107,7 @@ main {
     padding: 7em 0 0 0;
 
     h2 {
-      font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
+      font-size: clamp(1.625rem, 1.3462rem + 1.3942vw, 3.4375rem);
       // white-space: pre-line;
       color: variables.$voilet;
       font-weight: 600;
@@ -270,7 +304,8 @@ main {
           position: relative;
           font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
           font-weight: 400;
-          padding: 1em 0 1em 2em;
+          padding: 0em 0 0.5rem 2em;
+          font-weight: 300;
           &::before {
             content: "";
             width: 12px;
@@ -278,7 +313,7 @@ main {
             border-radius: 50%;
             position: absolute;
             left: 0;
-            top: 25px;
+            top: 8px;
             border: 2px solid variables.$white;
           }
           /* Different bullet colors */

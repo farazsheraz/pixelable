@@ -213,3 +213,36 @@ $('.serviceListMob').slick({
     prevArrow: "<img src='./assets/img/prev.svg' alt='prevBtn'/>",
     nextArrow: "<img src='./assets/img/next.svg' alt='nextBtn'/>"
 });
+
+//MOUSE SCROLL 
+document.querySelectorAll(".scrollMouse").forEach(function (trigger) {
+    trigger.addEventListener("click", function () {
+        const targetSelector = trigger.getAttribute("data-target");
+        const targetElement = document.querySelector(targetSelector);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+
+const sections = document.querySelectorAll("section");
+const menuLinks = document.querySelectorAll(".mobileMenu a");
+
+window.addEventListener("scroll", () => {
+    let currentSection = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (pageYOffset >= sectionTop - 60) {
+            currentSection = section.getAttribute("id");
+        }
+    });
+
+    menuLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("active");
+        }
+    });
+});
