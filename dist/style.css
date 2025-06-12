@@ -630,15 +630,16 @@ main .ourServices {
 }
 main .ourServices .subText {
   color: #db3722;
-  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem) !important;
+  font-size: 2rem !important;
   font-weight: 600;
 }
 main .ourServices h2 {
-  font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
+  font-size: 3.5rem;
   color: #309baf;
   font-weight: 600;
   line-height: 1.2em;
   margin-top: 0.7em;
+  letter-spacing: 4px;
   text-align: center;
 }
 main .ourServices .ourServicesContent {
@@ -646,18 +647,19 @@ main .ourServices .ourServicesContent {
   justify-content: center;
   align-items: center;
   text-align: left;
+  margin-bottom: 4rem;
 }
 main .ourServices .ourServicesContent h3 {
   font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
-  color: #a5a5a5;
+  color: #7f7f7f;
   margin: 0.8em 0 0.5em;
   font-weight: 600;
 }
 main .ourServices .ourServicesContent p {
   font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   color: #a5a5a5;
-  font-weight: 400;
-  line-height: 1.8em;
+  font-weight: 300;
+  line-height: 2.5rem;
   white-space: pre-line;
   margin-top: -2em;
 }
@@ -666,14 +668,16 @@ main .ourServices .serviceListMob {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2rem !important;
   gap: 1em;
 }
 main .ourServices .serviceList .item,
 main .ourServices .serviceListMob .item {
   border: 1px solid #cacaca;
   border-radius: 2em;
-  padding: 2em 2em;
+  padding: 4rem 1.1rem;
   width: 20%;
+  height: 350px;
 }
 main .ourServices .serviceList .item span,
 main .ourServices .serviceListMob .item span {
@@ -691,6 +695,11 @@ main .ourServices .serviceListMob .item h3 {
   font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
   color: #db3722;
   margin: 0.8em 0 0.5em;
+}
+main .ourServices .serviceList .item p,
+main .ourServices .serviceListMob .item p {
+  font-size: 1rem;
+  color: #a5a5a5;
 }
 main .ourServices .serviceList .item:nth-child(2) span,
 main .ourServices .serviceListMob .item:nth-child(2) span {
