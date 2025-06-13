@@ -10,6 +10,7 @@ main {
     background-image: url("../assets/img/hero-banner.png");
     @include mixins.bg-center-cover-no-repeat;
     position: relative;
+
     .objects {
       img {
         position: absolute;
@@ -25,6 +26,7 @@ main {
       img:nth-child(3) {
         bottom: 0;
         right: 0;
+        width: 18%;
       }
       img:nth-child(4) {
         top: 300px;
@@ -38,11 +40,13 @@ main {
       padding: 8rem 10em;
       text-align: center;
       h1 {
-        font-size: clamp(2rem, 1.3846rem + 3.0769vw, 6rem);
+        font-size: clamp(3.5rem, 1.3846rem + 3.0769vw, 6rem);
         color: variables.$white;
         font-weight: 500;
         text-transform: uppercase;
         line-height: 1.2em;
+        position: relative;
+        z-index: 99;
       }
       p {
         font-size: clamp(1rem, 0.8769rem + 0.6154vw, 1.8rem);
@@ -246,7 +250,7 @@ main {
       .feature-box {
         display: none;
         max-width: 300px;
-        p{
+        p {
           font-size: 13px;
         }
       }
@@ -961,7 +965,9 @@ main {
   }
   .slider,
   .mobilePlanSelector,
-  .serviceListMob {
+  .serviceListMob,
+  ul.tabs,
+  .tabs-content {
     display: none !important;
   }
 
@@ -993,13 +999,20 @@ main {
       width: 100%;
     }
     .heroBanner {
+      .heroBannerContent {
+        padding: 1rem 2.5rem;
+      }
       .objects {
         img:nth-child(2) {
-          bottom: 35px;
-          left: -380px;
+          bottom: 24px;
+          left: -250px;
         }
         img:nth-child(3) {
-          right: 0;
+          bottom: 27px;
+          right: 11px !important;
+          height: 473px;
+          object-fit: contain;
+          width: 137px;
         }
         .object4 {
           display: none;
@@ -1009,9 +1022,19 @@ main {
     .aboutUs,
     .aboutUs2 {
       grid-template-columns: 1fr;
+      gap: 0;
+      padding-top: 1rem;
+      text-align: center;
       .mission {
         .features-list {
           grid-template-columns: 1fr;
+          text-align: left;
+          li {
+            padding-bottom: 1rem;
+            &:nth-child(8) {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -1020,6 +1043,10 @@ main {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        padding-top: 1rem;
+        h3 {
+          margin-top: 1rem;
+        }
         div:first-child {
           img {
             width: 200px;
@@ -1044,6 +1071,7 @@ main {
       .aboutUs2Content {
         h2 {
           padding-right: 0 !important;
+          font-size: 1.9rem;
         }
       }
       .mission {
@@ -1054,12 +1082,35 @@ main {
     }
 
     .ourServices {
+      h2 {
+        font-size: 1.9rem;
+      }
       .ourServicesContent {
         flex-direction: column;
         text-align: center;
+        p {
+          white-space: unset;
+          margin-top: 0;
+          line-height: 1.5rem;
+        }
       }
     }
+    img.slick-arrow {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .next {
+      right: -25px;
+    }
 
+    .prev {
+      left: -25px;
+    }
+    .bg-grey {
+      margin-top: 5rem;
+    }
     .serviceList {
       display: none !important;
       // overflow-x: auto;
@@ -1128,6 +1179,10 @@ main {
     .pricing {
       .imgContent {
         flex-direction: column;
+        text-align: center;
+        h2 {
+          font-size: 2rem;
+        }
       }
       .pricingTable {
         .customPlanNote {
@@ -1143,13 +1198,29 @@ main {
         }
       }
     }
+    .work {
+      .workContent {
+        h2,
+        h3 {
+          font-size: 2rem;
+          line-height: normal;
+        }
+      }
+    }
     .contact {
       .form {
         grid-template-columns: 1fr;
         gap: 2rem;
+        margin-bottom: 3rem;
         article {
           order: 2;
           border-radius: 2rem;
+          background-position: top;
+          padding: 2rem;
+          h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+          }
         }
         .inner {
           border-radius: 2rem;
@@ -1199,6 +1270,9 @@ main {
           }
         }
       }
+      .send-btn {
+        width: 100% !important;
+      }
     }
     .slider {
       position: relative;
@@ -1238,10 +1312,82 @@ main {
     }
     img {
     }
+    .feature-wrapper {
+      display: none;
+    }
+    // TABS for Mobile
+    ul.tabs {
+      margin-top: 1rem;
+      padding: 0px;
+      list-style: none;
+      display: flex !important;
+      background-color: variables.$white;
+      border-radius: 2rem;
+      padding: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        background: #eaeaea;
+        color: #222;
+        padding: 15px 28px;
+        cursor: pointer;
+        border-radius: 30px;
+        @include mixins.flex-center;
+
+        img {
+          filter: invert(1);
+        }
+        &:nth-child(1).current {
+          background: variables.$orange;
+          img {
+            filter: unset;
+          }
+        }
+        &:nth-child(2).current {
+          background: variables.$golden;
+          img {
+            filter: unset;
+          }
+        }
+        &:nth-child(3).current {
+          background: variables.$voilet;
+          img {
+            filter: unset;
+          }
+        }
+      }
+    }
+    .tabs-content {
+      display: block !important;
+      #tab-1 {
+        h3 {
+          color: variables.$orange;
+        }
+      }
+      #tab-2 {
+        h3 {
+          color: variables.$golden;
+        }
+      }
+      #tab-3 {
+        h3 {
+          color: variables.$voilet;
+        }
+      }
+      .tab-content {
+        display: none;
+        padding: 15px;
+
+        &.current {
+          display: inherit;
+        }
+      }
+    }
   }
 }
 @media (max-width: 768px) {
   footer {
+    padding: 6rem 0 4rem;
     .container {
       flex-direction: column;
       align-items: center;

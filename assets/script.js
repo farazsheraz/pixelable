@@ -10,20 +10,7 @@ menuToggle.addEventListener("click", () => {
 
 
 
-const buttons = document.querySelectorAll(".tab-btn");
-const contents = document.querySelectorAll(".feature-content");
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        // Remove all actives
-        buttons.forEach(btn => btn.classList.remove("active"));
-        contents.forEach(content => content.classList.remove("active"));
-
-        // Add active to current
-        button.classList.add("active");
-        document.getElementById(button.dataset.target).classList.add("active");
-    });
-});
 
 //BACK2TOP
 document.getElementById('backToTop').addEventListener('click', () => {
@@ -186,7 +173,7 @@ gsap.utils.toArray(".project").forEach((project, i) => {
 });
 
 //Pricing 
-const selector = document.getElementById('planSelector');
+const selector = document.getElementById('mobilePlanSelector');
 const plans = document.querySelectorAll('.plan');
 
 function showSelectedPlan(value) {
@@ -202,6 +189,8 @@ selector.addEventListener('change', function () {
 // Initial load - show only silver
 showSelectedPlan('silver');
 
+
+
 //SERVICE LIST
 $('.serviceListMob').slick({
     slidesToShow: 1,
@@ -210,8 +199,8 @@ $('.serviceListMob').slick({
     fade: true,
     dots: true,
     autoplay: true,
-    prevArrow: "<img src='./assets/img/prev.svg' alt='prevBtn'/>",
-    nextArrow: "<img src='./assets/img/next.svg' alt='nextBtn'/>"
+    prevArrow: "<img src='./assets/img/prev.svg' alt='prevBtn' class='prev'/>",
+    nextArrow: "<img src='./assets/img/next.svg' alt='nextBtn' class='next'/>"
 });
 
 //MOUSE SCROLL 
@@ -246,3 +235,25 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+//TABS
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll("ul.tabs li");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            const tabId = this.getAttribute("data-tab");
+
+            // Remove 'current' from all tabs and contents
+            tabs.forEach(t => t.classList.remove("current"));
+            tabContents.forEach(c => c.classList.remove("current"));
+
+            // Add 'current' to clicked tab and corresponding content
+            this.classList.add("current");
+            document.getElementById(tabId).classList.add("current");
+        });
+    });
+});
+  

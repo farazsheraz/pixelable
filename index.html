@@ -68,10 +68,15 @@
             alt="Object2"
             class="object object2"
           />
+
           <img
             src="assets/img/Object3.png"
             alt="Object3"
             class="object object3"
+            srcset="
+              assets/img/Object3.png    1200w,
+              assets/img/Object3Mob.png  768w
+            "
           />
           <img
             src="assets/img/Object4.png"
@@ -120,20 +125,58 @@
               the digital world.
             </p>
 
+            <ul class="tabs">
+              <li class="tab-link current" data-tab="tab-1">
+                <img
+                  src="assets/img/aboutIcon1.png"
+                  class="feature-icon"
+                  alt=""
+                />
+              </li>
+              <li class="tab-link" data-tab="tab-2">
+                <img
+                  src="assets/img/aboutIcon2.png"
+                  class="feature-icon"
+                  alt=""
+                />
+              </li>
+              <li class="tab-link" data-tab="tab-3">
+                <img
+                  src="assets/img/aboutIcon3.png"
+                  class="feature-icon"
+                  alt=""
+                />
+              </li>
+            </ul>
+            <div class="tabs-content">
+              <div id="tab-1" class="tab-content current">
+                <h3>Scalable <br />Architecture</h3>
+                <p>
+                  Our websites are built to grow with your business from MVPs to
+                  enterprise-level platforms.
+                </p>
+              </div>
+              <div id="tab-2" class="tab-content">
+                <h3>
+                  Security<br />
+                  Development
+                </h3>
+                <p>
+                  We follow best practices to ensure your site is secure,
+                  reliable & compliant from day one.
+                </p>
+              </div>
+              <div id="tab-3" class="tab-content">
+                <h3>Data Driven <br />Design</h3>
+                <p>
+                  We use real user behavior, analytics, and testing insights to
+                  drive better UX and performance.
+                </p>
+              </div>
+            </div>
+
             <div class="feature-wrapper">
               <!-- Icon switcher for mobile -->
-              <div class="feature-tabs">
-                <button class="tab-btn active" data-id="feature1">
-                  <img src="assets/img/aboutIcon1.png" alt="Scalable" />
-                </button>
-                <button class="tab-btn" data-id="feature2">
-                  <img src="assets/img/aboutIcon2.png" alt="Security" />
-                </button>
-                <button class="tab-btn" data-id="feature3">
-                  <img src="assets/img/aboutIcon3.png" alt="Data" />
-                </button>
-              </div>
-
               <!-- Feature items (used in both views) -->
               <div class="features">
                 <div class="feature-box active" id="feature1">
