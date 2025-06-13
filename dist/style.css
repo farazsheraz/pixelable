@@ -453,20 +453,20 @@ main .aboutUs2 .aboutUs2Content {
 }
 main .aboutUs2 .aboutUs2Content .subText {
   color: #db3722;
-  font-size: clamp(1.2rem, 0.9692rem + 0.1538vw, 1.5rem);
+  font-size: 2rem;
   font-weight: 600;
 }
 main .aboutUs2 .aboutUs2Content h2 {
-  font-size: clamp(1.5rem, 1.2692rem + 1.1538vw, 3rem);
-  color: #a5a5a5;
+  font-size: 3.5rem;
+  color: #7f7f7f;
   font-weight: 500;
   line-height: 1.2em;
   margin-top: 0.7em;
-  padding-right: 4.5em;
+  padding-right: 8rem;
 }
 main .aboutUs2 .aboutUs2Content p {
   font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
-  color: #a5a5a5;
+  color: #7f7f7f;
   font-weight: 400;
   line-height: 1.5em;
   margin-top: 1em;
@@ -547,6 +547,9 @@ main .aboutUs2 .aboutUs2Content .feature-box {
   display: none;
   max-width: 300px;
 }
+main .aboutUs2 .aboutUs2Content .feature-box p {
+  font-size: 13px;
+}
 main .aboutUs2 .aboutUs2Content .feature-box.active {
   display: block;
 }
@@ -571,10 +574,11 @@ main .aboutUs2 .mission .imgContent {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4em;
+  margin-bottom: 4rem;
+  margin-top: 4.5rem;
 }
 main .aboutUs2 .mission .imgContent h3 {
-  font-size: clamp(1.2rem, 1.1538rem + 0.2308vw, 1.5rem);
+  font-size: 1.7rem;
   color: #309baf;
   margin: 0.8em 0 0.5em;
   font-weight: 500;
@@ -596,7 +600,7 @@ main .aboutUs2 .mission .features-list {
 main .aboutUs2 .mission .features-list li {
   flex: 1 1 48%;
   position: relative;
-  font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
+  font-size: 1rem;
   font-weight: 400;
   padding: 0em 0 0.5rem 2em;
   font-weight: 300;
