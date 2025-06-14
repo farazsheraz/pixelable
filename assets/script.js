@@ -242,21 +242,29 @@ document.addEventListener("DOMContentLoaded", function () {
 //PRICING
 
 document.addEventListener("DOMContentLoaded", function () {
-    const selector = document.getElementById("mobilePlanSelector");
+    const select = document.getElementById("planSelector");
     const plans = document.querySelectorAll(".mobilePlans .plan");
 
-    function updateVisiblePlan() {
-        const selected = selector.value;
-
-        plans.forEach((plan) => {
-            plan.classList.remove("active");
+    // Function to show only the selected plan
+    function showPlan(selected) {
+        plans.forEach(plan => {
             if (plan.classList.contains(selected)) {
                 plan.classList.add("active");
+            } else {
+                plan.classList.remove("active");
             }
         });
     }
 
-    updateVisiblePlan();
+    // Show default selected option on page load
+    if (select) {
+        showPlan(select.value);
 
+        // Listen for dropdown change
+        select.addEventListener("change", function () {
+            showPlan(this.value);
+        });
+    }
 });
+
 
