@@ -789,7 +789,7 @@ main .pricing .pricingTable .pricing-container .plan {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.22);
   position: relative;
   z-index: 1;
-  display: block !important;
+  display: block;
 }
 main .pricing .pricingTable .pricing-container .plan .firstSec {
   display: flex;
@@ -998,15 +998,15 @@ main .work .workContent h2 {
   font-size: 3.5rem;
   color: #edaa29;
   font-weight: 400;
-  line-height: 1.2rem;
+  line-height: 1.2;
   margin-bottom: 1rem;
 }
 main .work .workContent h3 {
   font-size: 3.5rem;
   color: #a5a5a5;
   font-weight: 400;
-  line-height: 1.2rem;
   margin-top: 3rem;
+  line-height: 1.4;
 }
 main .work .workContent .portfolio {
   position: relative;
@@ -1238,6 +1238,7 @@ main .contact .form .inner .input-row .input-group:nth-child(2) {
 }
 main .slider,
 main .mobilePlanSelector,
+main .mobilePlans,
 main .serviceListMob,
 main ul.tabs,
 main .tabs-content {
@@ -1507,7 +1508,7 @@ main .serviceListMob ul.slick-dots .slick-active button {
     align-items: center;
   }
   main .mobilePlanSelector {
-    display: block;
+    display: block !important;
     width: 100%;
     margin-bottom: 2em;
     text-align: center;
@@ -1518,8 +1519,21 @@ main .serviceListMob ul.slick-dots .slick-active button {
     border-radius: 8px;
     border: 1px solid #ccc;
   }
-  main .feature-wrapper {
-    display: none;
+  main .mobilePlanSelector,
+  main .mobilePlans {
+    display: block !important;
+  }
+  main .mobilePlanSelector .plan,
+  main .mobilePlans .plan {
+    display: none !important;
+  }
+  main .mobilePlanSelector .plan.active,
+  main .mobilePlans .plan.active {
+    display: block !important;
+  }
+  main .feature-wrapper,
+  main .desktopPlans {
+    display: none !important;
   }
   main ul.tabs {
     margin-top: 1rem;

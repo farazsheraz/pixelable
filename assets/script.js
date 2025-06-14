@@ -172,25 +172,6 @@ gsap.utils.toArray(".project").forEach((project, i) => {
     );
 });
 
-//Pricing 
-const selector = document.getElementById('mobilePlanSelector');
-const plans = document.querySelectorAll('.plan');
-
-function showSelectedPlan(value) {
-    plans.forEach(plan => {
-        plan.style.display = plan.classList.contains(value) ? 'block' : 'none';
-    });
-}
-
-selector.addEventListener('change', function () {
-    showSelectedPlan(this.value);
-});
-
-// Initial load - show only silver
-showSelectedPlan('silver');
-
-
-
 //SERVICE LIST
 $('.serviceListMob').slick({
     slidesToShow: 1,
@@ -256,4 +237,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-  
+
+
+//PRICING
+
+document.addEventListener("DOMContentLoaded", function () {
+    const selector = document.getElementById("mobilePlanSelector");
+    const plans = document.querySelectorAll(".mobilePlans .plan");
+
+    function updateVisiblePlan() {
+        const selected = selector.value;
+
+        plans.forEach((plan) => {
+            plan.classList.remove("active");
+            if (plan.classList.contains(selected)) {
+                plan.classList.add("active");
+            }
+        });
+    }
+
+    updateVisiblePlan();
+
+});
+

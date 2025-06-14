@@ -489,7 +489,7 @@ main {
           position: relative;
           // overflow: hidden;
           z-index: 1;
-          display: block !important;
+          display: block;
           .firstSec {
             @include mixins.flex-space-bw;
             align-items: start;
@@ -730,15 +730,15 @@ main {
         font-size: 3.5rem;
         color: variables.$golden;
         font-weight: 400;
-        line-height: 1.2rem;
+        line-height: 1.2;
         margin-bottom: 1rem;
       }
       h3 {
         font-size: 3.5rem;
         color: variables.$darkgrey;
         font-weight: 400;
-        line-height: 1.2rem;
         margin-top: 3rem;
+        line-height: 1.4;
       }
       .portfolio {
         ul {
@@ -965,6 +965,7 @@ main {
   }
   .slider,
   .mobilePlanSelector,
+  .mobilePlans,
   .serviceListMob,
   ul.tabs,
   .tabs-content {
@@ -1298,7 +1299,7 @@ main {
     }
 
     .mobilePlanSelector {
-      display: block;
+      display: block !important;
       width: 100%;
       margin-bottom: 2em;
       text-align: center;
@@ -1312,8 +1313,21 @@ main {
     }
     img {
     }
-    .feature-wrapper {
-      display: none;
+
+    .mobilePlanSelector,
+    .mobilePlans {
+      display: block !important;
+      .plan {
+        display: none !important;
+        &.active {
+          display: block !important;
+        }
+      }
+    }
+
+    .feature-wrapper,
+    .desktopPlans {
+      display: none !important;
     }
     // TABS for Mobile
     ul.tabs {
