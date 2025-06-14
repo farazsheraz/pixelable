@@ -1114,6 +1114,9 @@ main .contact .form article a {
   gap: 1em;
   font-size: 1.33rem;
 }
+main .contact .form article img {
+  width: auto;
+}
 main .contact .form .inner {
   padding: 3em;
   text-align: left;
