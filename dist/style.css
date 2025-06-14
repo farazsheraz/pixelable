@@ -66,6 +66,11 @@ html {
   cursor: pointer;
   z-index: 1100;
   position: relative;
+  color: #000;
+}
+.heroBanner header .hamburger::before {
+  content: "☰";
+  font-size: 2.5rem;
 }
 .heroBanner header .hamburger.open::before {
   content: "×";
@@ -105,7 +110,7 @@ html {
     background-color: #fff;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: start;
     padding: 2rem;
     transform: translateX(-100%);
     transition: transform 0.4s ease-in-out;
@@ -116,6 +121,9 @@ html {
   .heroBanner header .mobileMenu ul {
     flex-direction: column;
     gap: 1.5rem;
+    justify-content: unset;
+    align-items: start;
+    margin-top: 5rem;
   }
   .heroBanner header .mobileMenu ul li a {
     color: #000;
@@ -128,9 +136,6 @@ html {
   }
   .heroBanner header .mobileRight {
     display: none;
-  }
-  .heroBanner header body.menu-open {
-    overflow: hidden;
   }
 }
 
@@ -275,6 +280,10 @@ nav ul li a::before {
 nav ul li a.active::before {
   opacity: 1;
   filter: invert(1);
+}
+
+body.menu-open {
+  overflow: hidden !important;
 }
 
 main .heroBanner {

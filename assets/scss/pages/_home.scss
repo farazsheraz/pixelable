@@ -1,6 +1,10 @@
 @use "../abstracts/mixins";
 @use "../abstracts/variables";
 
+body.menu-open {
+  overflow: hidden !important;
+}
+
 main {
   // img {
   //   width: 100%;
@@ -999,6 +1003,7 @@ main {
   }
 
   @media (max-width: 768px) {
+    
     img {
       width: 100%;
     }
