@@ -1,7 +1,6 @@
 @use "../abstracts/mixins";
 @use "../abstracts/variables";
 
-
 .heroBanner {
   header {
     position: relative;
@@ -61,8 +60,11 @@
 
   @media (max-width: 768px) {
     header {
+      padding: 2rem 0;
+      text-align: center;
       .hamburger {
         display: block;
+        color: variables.$white;
       }
 
       .mobileMenu {
@@ -103,7 +105,13 @@
       }
 
       .mobileRight {
-        display: none;
+        a {
+          padding: 0.5rem 1rem;
+          font-weight: 500;
+        }
+      }
+      img {
+        width: 80%;
       }
     }
   }

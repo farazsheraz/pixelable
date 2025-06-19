@@ -98,8 +98,13 @@ html {
   font-size: 1.3em;
 }
 @media (max-width: 768px) {
+  .heroBanner header {
+    padding: 2rem 0;
+    text-align: center;
+  }
   .heroBanner header .hamburger {
     display: block;
+    color: #fff;
   }
   .heroBanner header .mobileMenu {
     position: fixed;
@@ -134,8 +139,12 @@ html {
     visibility: visible;
     opacity: 1;
   }
-  .heroBanner header .mobileRight {
-    display: none;
+  .heroBanner header .mobileRight a {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+  }
+  .heroBanner header img {
+    width: 80%;
   }
 }
 
@@ -1281,7 +1290,22 @@ main .serviceListMob ul.slick-dots .slick-active button {
     width: 100%;
   }
   main .heroBanner .heroBannerContent {
-    padding: 1rem 2.5rem;
+    padding: 1rem 2.5rem 5rem;
+  }
+  main .heroBanner .heroBannerContent h1 {
+    font-weight: 600;
+  }
+  main .heroBanner .heroBannerContent p {
+    width: 80%;
+    position: relative;
+    z-index: 99;
+  }
+  main .heroBanner .heroBannerContent a {
+    padding: 1rem 2rem;
+  }
+  main .heroBanner .heroBannerContent .scrollMouse::before {
+    height: 100px;
+    top: 50px;
   }
   main .heroBanner .objects img:nth-child(2) {
     bottom: 24px;
@@ -1296,6 +1320,22 @@ main .serviceListMob ul.slick-dots .slick-active button {
   }
   main .heroBanner .objects .object4 {
     display: none;
+  }
+  main .aboutUs {
+    padding-top: 5rem;
+  }
+  main .aboutUs img {
+    width: auto;
+    margin-left: 53px;
+  }
+  main .aboutUs h2 {
+    font-size: 2rem;
+  }
+  main .aboutUs p span {
+    display: none;
+  }
+  main .aboutUs2 .subText {
+    font-size: 1.5rem !important;
   }
   main .aboutUs,
   main .aboutUs2 {
@@ -1533,11 +1573,16 @@ main .serviceListMob ul.slick-dots .slick-active button {
   }
   main .mobilePlanSelector,
   main .mobilePlans {
-    display: block !important;
+    display: inline-block !important;
   }
   main .mobilePlanSelector .plan,
   main .mobilePlans .plan {
     display: none !important;
+    width: 320px !important;
+  }
+  main .mobilePlanSelector .plan .price,
+  main .mobilePlans .plan .price {
+    width: 350px !important;
   }
   main .mobilePlanSelector .plan.active,
   main .mobilePlans .plan.active {
@@ -1548,7 +1593,7 @@ main .serviceListMob ul.slick-dots .slick-active button {
     display: none !important;
   }
   main ul.tabs {
-    margin-top: 1rem;
+    margin: 2rem 0;
     padding: 0px;
     list-style: none;
     display: flex !important;
@@ -1557,6 +1602,7 @@ main .serviceListMob ul.slick-dots .slick-active button {
     padding: 0.5rem;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 3.564px 1.816px 31.5px 3.5px rgba(90, 90, 90, 0.15);
   }
   main ul.tabs li {
     background: #eaeaea;
@@ -1591,6 +1637,9 @@ main .serviceListMob ul.slick-dots .slick-active button {
   }
   main .tabs-content {
     display: block !important;
+  }
+  main .tabs-content h3 {
+    font-size: 1.5rem;
   }
   main .tabs-content #tab-1 h3 {
     color: #db3722;

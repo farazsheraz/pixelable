@@ -266,6 +266,11 @@ document.addEventListener("DOMContentLoaded", function () {
             showPlan(this.value);
         });
     }
+
+    //scrollMouse
+    document.querySelector('.scrollMouse img').src = 'assets/img/mouseMob.svg';
+    document.querySelector('.aboutUs img').src = 'assets/img/abt-shape-mob.png';
+
 });
 
 
