@@ -758,7 +758,7 @@ main .ourServices .serviceListMob .item {
   border-radius: 2em;
   padding: 3rem 1.1rem;
   height: 100%;
-  margin: 0 3rem;
+  margin: 0 2rem;
 }
 main .bg-grey {
   background-color: #fafafa;
@@ -1035,6 +1035,12 @@ main .work .workContent h3 {
   font-weight: 400;
   margin-top: 3rem;
   line-height: 1.4;
+}
+main .work .workContent h3 span.mob {
+  display: none;
+}
+main .work .workContent h3 span.desktop {
+  display: block;
 }
 main .work .workContent .portfolio {
   position: relative;
@@ -1341,17 +1347,17 @@ main .serviceListMob ul.slick-dots .slick-active button {
     margin-left: 53px;
   }
   main .aboutUs h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   main .aboutUs p span {
     display: none;
   }
   main .aboutUs2 .aboutUs2Content h2 {
     padding-right: 0 !important;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
   main .aboutUs2 .subText {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
   }
   main .aboutUs2 .mission span {
     font-size: 1.2rem !important;
@@ -1400,11 +1406,34 @@ main .serviceListMob ul.slick-dots .slick-active button {
   main .work .workContent div:first-child img {
     width: 200px;
   }
-  main .work .workContent .portfolio ul li {
-    padding: 0.5em !important;
+  main .work .workContent .portfolio ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
   }
-  main .work .workContent .portfolio ul li img {
-    width: 100px;
+  main .work .workContent .portfolio ul li:first-child img:first-child,
+  main .work .workContent .portfolio ul li:first-child img:nth-child(2) {
+    width: 55%;
+  }
+  main .work .workContent .portfolio ul li:nth-child(2) img:first-child,
+  main .work .workContent .portfolio ul li:nth-child(2) img:nth-child(2),
+  main .work .workContent .portfolio ul li:nth-child(2) img:nth-child(3) {
+    width: 30%;
+  }
+  main .work .workContent .portfolio ul li:nth-child(3) img:first-child,
+  main .work .workContent .portfolio ul li:nth-child(3) img:nth-child(2),
+  main .work .workContent .portfolio ul li:nth-child(3) img:nth-child(3),
+  main .work .workContent .portfolio ul li:nth-child(3) img:nth-child(4) {
+    width: 15%;
+  }
+  main .work .workContent .portfolio ul li:nth-child(4) img:first-child,
+  main .work .workContent .portfolio ul li:nth-child(4) img:nth-child(2) {
+    width: 10%;
+    padding: 0 !important;
+  }
+  main .work .workContent .portfolio ul li {
+    gap: 0.3rem;
+    padding: 0 !important;
   }
   main .work .workContent .portfolio .lamp {
     width: auto;
@@ -1413,7 +1442,7 @@ main .serviceListMob ul.slick-dots .slick-active button {
     font-size: 1.4rem !important;
   }
   main .ourServices h2 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
   main .ourServices .ourServicesContent {
     flex-direction: column;
@@ -1519,10 +1548,28 @@ main .serviceListMob ul.slick-dots .slick-active button {
   main .pricing .firstSec img {
     width: auto;
   }
+  main .work p {
+    font-size: 1.4rem;
+  }
   main .work .workContent h2,
   main .work .workContent h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: normal;
+  }
+  main .work .workContent h2 .mob,
+  main .work .workContent h3 .mob {
+    display: block !important;
+  }
+  main .work .workContent h2 .desktop,
+  main .work .workContent h3 .desktop {
+    display: none !important;
+  }
+  main .contact span {
+    font-size: 1.4rem !important;
+  }
+  main .contact h2 {
+    font-size: 1.8rem !important;
+    line-height: 1.5;
   }
   main .contact .form {
     grid-template-columns: 1fr;
@@ -1531,12 +1578,13 @@ main .serviceListMob ul.slick-dots .slick-active button {
   }
   main .contact .form article {
     order: 2;
-    border-radius: 2rem;
+    border-radius: 1rem;
     background-position: top;
-    padding: 2rem;
+    background-size: unset;
+    padding: 3rem 2rem;
   }
   main .contact .form article h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
   }
   main .contact .form .inner {
@@ -1584,6 +1632,7 @@ main .serviceListMob ul.slick-dots .slick-active button {
   }
   main .contact .send-btn {
     width: 100% !important;
+    padding: 1rem !important;
   }
   main .slider {
     position: relative;
