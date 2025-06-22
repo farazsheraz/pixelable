@@ -65,6 +65,10 @@
       .hamburger {
         display: block;
         color: variables.$white;
+
+        &.open {
+          color: variables.$orange !important;
+        }
       }
 
       .mobileMenu {

@@ -74,10 +74,6 @@
             src="assets/img/Object3.png"
             alt="Object3"
             class="object object3"
-            srcset="
-              assets/img/Object3.png    1200w,
-              assets/img/Object3Mob.png  768w
-            "
           />
           <img
             src="assets/img/Object4.png"
@@ -413,6 +409,10 @@
               </p>
             </div>
             <img src="assets/img/boat.png" alt="boat" />
+            <p class="mob">
+              <b>Sailing your way, </b>
+              No hidden fees lurking <br />beneath the surface.
+            </p>
           </div>
           <div class="pricingTable">
             <p>
@@ -526,13 +526,45 @@
             </div>
 
             <!---MOBILE--->
-
+            <!-- 
             <div class="mobilePlanSelector" id="mobilePlanSelector">
               <select id="planSelector">
                 <option value="silver" selected>Silver</option>
                 <option value="diamond">Diamond</option>
                 <option value="gold">Gold</option>
               </select>
+            </div> -->
+
+            <div class="custom-select-wrapper">
+              <div class="custom-select" id="customDropdown">
+                <div>
+                  <img
+                    src="assets/img/silver.png"
+                    alt="icon"
+                    class="select-icon"
+                    id="selectedIcon"
+                  />
+                  <span class="selected-option" id="selectedText">Silver</span>
+                </div>
+                <img src="assets/img/mouseMob.svg" class="arrow" alt="" />
+              </div>
+              <ul class="options" id="planOptions">
+                <li data-value="silver" data-icon="assets/img/silver.png">
+                  <div><img src="assets/img/silver.png" alt="" /> Silver</div>
+                </li>
+                <li data-value="diamond" data-icon="assets/img/diamond.png">
+                  <div>
+                    <img src="assets/img/diamond.png" alt="" />
+                    Diamond
+                  </div>
+                </li>
+                <li data-value="gold" data-icon="assets/img/gold.png">
+                  <div>
+                    <img src="assets/img/gold.png" alt="" />
+                    Gold
+                  </div>
+                </li>
+              </ul>
             </div>
 
             <div class="pricing-container mobilePlans">

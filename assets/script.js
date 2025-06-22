@@ -243,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //PRICING
 
 document.addEventListener("DOMContentLoaded", function () {
+
     const select = document.getElementById("planSelector");
     const plans = document.querySelectorAll(".mobilePlans .plan");
 
@@ -267,10 +268,74 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    //scrollMouse
-    document.querySelector('.scrollMouse img').src = 'assets/img/mouseMob.svg';
-    document.querySelector('.aboutUs img').src = 'assets/img/abt-shape-mob.png';
+
+    //FOR MOBILE IMG
+
+    if (window.innerWidth <= 768) {
+        const imageMap = {
+            '.scrollMouse img': 'assets/img/mouseMob.svg',
+            '.aboutUs img': 'assets/img/abt-shape-mob.png',
+            '.objects .object3': 'assets/img/Object3Mob.png'
+            // Add more selectors and their mobile image URLs as needed
+        };
+
+        for (const selector in imageMap) {
+            document.querySelectorAll(selector).forEach(img => {
+                // img.src = imageMap[selector];
+                img.src = imageMap[selector] + '?v=' + Date.now(); // cache-busting trick
+
+            });
+        }
+    }
 
 });
 
 
+const customSelect = document.getElementById('customDropdown');
+const optionsList = document.getElementById('planOptions');
+const selectedText = document.getElementById('selectedText');
+const selectedIcon = document.getElementById('selectedIcon');
+const plans = document.querySelectorAll('.mobilePlans .plan');
+
+// Plan display function (your original logic)
+function showPlan(selectedValue) {
+    plans.forEach(plan => {
+        if (plan.classList.contains(selectedValue)) {
+            plan.classList.add('active');
+        } else {
+            plan.classList.remove('active');
+        }
+    });
+}
+
+// Initial default
+showPlan('silver');
+
+// Toggle dropdown
+customSelect.addEventListener('click', () => {
+    optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+});
+
+// Option selection handler
+optionsList.addEventListener('click', function (e) {
+    const li = e.target.closest('li');
+    if (li) {
+        const label = li.textContent.trim();
+        const icon = li.getAttribute('data-icon');
+        const value = li.getAttribute('data-value');
+
+        selectedText.textContent = label;
+        selectedIcon.src = icon;
+
+        showPlan(value); // Call your original function
+
+        optionsList.style.display = 'none';
+    }
+});
+
+// Close if clicked outside
+document.addEventListener('click', function (e) {
+    if (!customSelect.contains(e.target) && !optionsList.contains(e.target)) {
+        optionsList.style.display = 'none';
+    }
+});

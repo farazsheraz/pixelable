@@ -436,6 +436,15 @@ main {
         }
       }
     }
+    .serviceListMob {
+      .item {
+        border: 1px solid variables.$lightgrey;
+        border-radius: 2em;
+        padding: 3rem 1.1rem;
+        height: 100%;
+        margin: 0 3rem;
+      }
+    }
   }
   //****PRICING SECTION****//
   .bg-grey {
@@ -975,13 +984,15 @@ main {
   .mobilePlans,
   .serviceListMob,
   ul.tabs,
-  .tabs-content {
+  .tabs-content,
+  p.mob,
+  .custom-select-wrapper {
     display: none !important;
   }
 
   .serviceListMob ul.slick-dots {
     display: flex;
-    gap: 1rem;
+    gap: 0.3rem;
     position: absolute;
     top: 110%;
     display: flex;
@@ -991,8 +1002,8 @@ main {
 
   .serviceListMob ul.slick-dots button {
     border-radius: 100%;
-    width: 10px;
-    height: 10px;
+    width: 13px;
+    height: 13px;
     font-size: 0;
     background-color: #d6d6d6;
     border: 0;
@@ -1045,7 +1056,7 @@ main {
     }
     //ABOUT
     .aboutUs {
-      padding-top: 5rem;
+      padding-top: 5rem !important;
       img {
         width: auto;
         margin-left: 53px;
@@ -1059,9 +1070,29 @@ main {
         }
       }
     }
+    //ABOUT2
     .aboutUs2 {
+      .aboutUs2Content {
+        h2 {
+          padding-right: 0 !important;
+          font-size: 1.9rem;
+        }
+      }
       .subText {
         font-size: 1.5rem !important;
+      }
+      .mission {
+        span {
+          font-size: 1.2rem !important;
+        }
+        .imgContent {
+          flex-direction: column;
+          h3 {
+            font-size: 1.4rem !important;
+            line-height: 1.5;
+            font-weight: 600;
+          }
+        }
       }
     }
     .aboutUs,
@@ -1079,11 +1110,15 @@ main {
             &:nth-child(8) {
               display: none;
             }
+            &::before {
+              top: 3px !important;
+            }
           }
         }
       }
     }
 
+    //work
     .work {
       .workContent {
         grid-template-columns: 1fr;
@@ -1113,23 +1148,14 @@ main {
         }
       }
     }
-    .aboutUs2 {
-      .aboutUs2Content {
-        h2 {
-          padding-right: 0 !important;
-          font-size: 1.9rem;
-        }
-      }
-      .mission {
-        .imgContent {
-          flex-direction: column;
-        }
-      }
-    }
 
+    //ourServices
     .ourServices {
+      .subText {
+        font-size: 1.4rem !important;
+      }
       h2 {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
       }
       .ourServicesContent {
         flex-direction: column;
@@ -1138,6 +1164,7 @@ main {
           white-space: unset;
           margin-top: 0;
           line-height: 1.5rem;
+          color: #524e4e;
         }
       }
     }
@@ -1148,11 +1175,11 @@ main {
       margin: auto;
     }
     .next {
-      right: -25px;
+      right: 0px;
     }
 
     .prev {
-      left: -25px;
+      left: 0px;
     }
     .bg-grey {
       margin-top: 5rem;
@@ -1221,18 +1248,37 @@ main {
     .dots span.active {
       background: #333;
     }
-
+    //pricing
     .pricing {
       .imgContent {
         flex-direction: column;
         text-align: center;
+        span {
+          font-size: 1.4rem;
+        }
         h2 {
-          font-size: 2rem;
+          font-size: 1.8rem;
+        }
+        p {
+          display: none;
+        }
+        img {
+          margin: 3rem 0;
+          width: 70%;
+        }
+        p.mob {
+          display: block !important;
+          margin-top: 0;
         }
       }
       .pricingTable {
         .customPlanNote {
           p {
+            strong {
+              border-bottom: 1px solid variables.$golden;
+              width: 100%;
+              padding-bottom: 0.5rem;
+            }
             flex-direction: column;
             width: 100%;
           }
@@ -1346,7 +1392,7 @@ main {
     .mobilePlanSelector {
       display: block !important;
       width: 100%;
-      margin-bottom: 2em;
+      margin: 2rem 0 1rem;
       text-align: center;
 
       select {
@@ -1354,6 +1400,86 @@ main {
         padding: 0.5em 1em;
         border-radius: 8px;
         border: 1px solid #ccc;
+        box-shadow: 3.564px 1.816px 31.5px 3.5px rgba(90, 90, 90, 0.15);
+        width: 85%;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+    }
+
+    .custom-select-wrapper {
+      position: relative;
+      width: 85%;
+      margin: 2rem auto;
+      display: block !important;
+
+      .custom-select {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 1rem;
+        padding: 1rem;
+        background: white;
+        cursor: pointer;
+        box-shadow: 3.564px 1.816px 31.5px 3.5px rgba(90, 90, 90, 0.15);
+
+        justify-content: space-between;
+        div {
+          display: flex;
+          width: 50%;
+          align-items: center;
+        }
+        .select-icon {
+          width: 30%;
+          margin-right: 8px;
+        }
+
+        .selected-option {
+          flex-grow: 1;
+          font-size: 1.4rem;
+        }
+
+        .arrow {
+          width: auto;
+        }
+      }
+
+      .options {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        max-height: 200px;
+        overflow-y: auto;
+
+        li {
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+          div {
+            display: flex;
+            width: 50%;
+            align-items: center;
+          }
+          img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+          }
+
+          &:hover {
+            background-color: #f3f3f3;
+          }
+        }
       }
     }
 
