@@ -22,13 +22,13 @@ footer {
         margin-top: 10px;
 
         li {
-          border: 0.1em solid variables.$orange;
+          border: 0.1em solid #f5662e;
           border-radius: 0.25em;
           @include mixins.flex-center;
           padding: 0.5em;
-          @include mixins.anchorEffects;
+
           &:hover {
-            // background-color: variables.$white;
+            background-color: variables.$white;
             a {
               img {
                 filter: brightness(1) invert(1);
