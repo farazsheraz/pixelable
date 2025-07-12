@@ -7,10 +7,6 @@
   box-sizing: border-box;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 ::selection {
   color: black;
   background-color: #fff;
@@ -203,13 +199,13 @@ footer .container p {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.2rem;
 }
 
 .container-fluid {
   max-width: 1650px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.2rem;
 }
 
 .button {
@@ -333,6 +329,7 @@ main .heroBanner .heroBannerContent a {
   transition-property: color;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  z-index: 99;
 }
 main .heroBanner .heroBannerContent a:hover {
   color: #db3722;
@@ -1807,6 +1804,26 @@ main .serviceListMob ul.slick-dots .slick-active button {
   }
   footer .container #backToTop {
     display: none;
+  }
+}
+@media (max-width: 320px) {
+  main .heroBanner header .mobileRight a {
+    padding: 0.3em !important;
+    font-size: 0.9rem;
+  }
+  main .heroBanner .heroBannerContent p {
+    width: 91%;
+    position: relative;
+    z-index: 99;
+  }
+  main .heroBanner .heroBannerContent a {
+    padding: 1rem 1rem;
+  }
+  main .mobilePlans .plan {
+    width: 280px !important;
+  }
+  main .mobilePlans .plan .price {
+    width: 310px !important;
   }
 }
 body.about {

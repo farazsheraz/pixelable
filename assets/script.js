@@ -1,12 +1,33 @@
+// const menuToggle = document.getElementById("menuToggle");
+// const nav = document.querySelector(".mobileMenu");
+// const body = document.body;
+
+// menuToggle.addEventListener("click", () => {
+//     const isOpen = nav.classList.toggle("open");
+//     menuToggle.classList.toggle("open");
+//     body.classList.toggle("menu-open", isOpen);
+// });
+
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.querySelector(".mobileMenu");
 const body = document.body;
+const menuLinks1 = document.querySelectorAll(".mobileMenu a");
 
 menuToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
     menuToggle.classList.toggle("open");
     body.classList.toggle("menu-open", isOpen);
 });
+
+// Close menu when a menu item is clicked
+menuLinks1.forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuToggle.classList.remove("open");
+        body.classList.remove("menu-open");
+    });
+});
+
 
 
 

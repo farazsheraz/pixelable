@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Pixelable" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <link rel="stylesheet" href="dist/style.css" preload />
     <link
       rel="stylesheet"
@@ -16,7 +19,7 @@
   <body>
     <main>
       <!-- HERO BANNER START-->
-      <section class="heroBanner">
+      <section class="heroBanner" id="home">
         <div class="container">
           <header>
             <button
@@ -30,7 +33,7 @@
 
             <nav class="mobileMenu">
               <ul>
-                <li><a href="index.html">Home </a></li>
+                <li><a href="#home">Home </a></li>
                 <li><a href="#about">About Us </a></li>
                 <li><a href="#services">Services </a></li>
                 <li><a href="#pricing">Pricing </a></li>
@@ -38,7 +41,7 @@
                 <li><a href="#contact">Contact Us </a></li>
               </ul>
             </nav>
-            <div class="mobileRight"><a href="#">Hire Us!</a></div>
+            <div class="mobileRight"><a href="#contact">Hire Us!</a></div>
           </header>
           <div class="heroBannerContent">
             <h1>We Are A Creative design Agency</h1>
@@ -395,7 +398,7 @@
       </section>
       <!-- OUR SERVICES END -->
       <!-- PRICING START -->
-      <section class="container-fluid bg-grey">
+      <section class="container-fluid bg-grey" id="pricing">
         <div class="container pricing">
           <div class="imgContent">
             <div>
@@ -408,7 +411,7 @@
                 No hidden fees lurking <br />beneath the surface.
               </p>
             </div>
-            <img src="assets/img/boat.png" alt="boat" />
+            <img src="assets/img/boat-animate.gif" alt="boat" />
             <p class="mob">
               <b>Sailing your way, </b>
               No hidden fees lurking <br />beneath the surface.
@@ -682,7 +685,7 @@
       </section>
       <!-- PRICING END -->
       <!-- WORK START -->
-      <section class="container">
+      <section class="container" id="portfolio">
         <div class="work">
           <p>Our Work</p>
           <div class="workContent">
@@ -787,7 +790,7 @@
       </div>
       <!-- WORK END -->
       <!-- CONTACT US START -->
-      <section class="container">
+      <section class="container" id="contact">
         <div class="contact">
           <span>Talk to Us</span>
           <h2>
@@ -965,7 +968,7 @@
         <p class="copyright">Copyright © 2025</p>
         <div>
           <a href="/">
-            <img src="assets/img/logo.svg" alt="logo" />
+            <img src="assets/img/Pixelable_Logo.png" width="80%" alt="logo" />
           </a>
           <p>Dream.Design.Deliver</p>
           <ul>

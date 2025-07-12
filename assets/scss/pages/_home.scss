@@ -68,6 +68,7 @@ main {
         font-size: clamp(1rem, 0.9692rem + 0.1538vw, 1.2rem);
         font-weight: 200;
         @include mixins.anchorEffects;
+        z-index: 99;
       }
       .scrollMouse {
         margin-top: 2rem;
@@ -1648,3 +1649,37 @@ main {
     }
   }
 }
+
+//Max-width 320px
+@media (max-width: 320px) {
+  main {
+    .heroBanner {
+      header {
+        .mobileRight {
+          a {
+            padding: 0.3em !important;
+            font-size: 0.9rem;
+          }
+        }
+      }
+      .heroBannerContent {
+        p {
+          width: 91%;
+          position: relative;
+          z-index: 99;
+        }
+        a {
+          padding: 1rem 1rem;
+        }
+      }
+    }
+    .mobilePlans {
+      .plan {
+        width: 280px !important;
+        .price {
+          width: 310px !important;
+        }
+      }
+    }
+  } // Main tag
+} // Media query tag
