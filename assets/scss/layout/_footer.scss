@@ -17,10 +17,12 @@ footer {
       color: #ffc68f;
     }
     div {
-      ul {
-        @include mixins.flex-space-bw;
-        margin-top: 10px;
+      text-align: center;
 
+      ul {
+        @include mixins.flex-center;
+        margin-top: 10px;
+        gap: 1rem;
         li {
           border: 0.1em solid #f5662e;
           border-radius: 0.25em;

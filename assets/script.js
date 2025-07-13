@@ -348,7 +348,12 @@ optionsList.addEventListener('click', function (e) {
         selectedText.textContent = label;
         selectedIcon.src = icon;
 
+        // Highlight the selected item
+        document.querySelectorAll('#planOptions li').forEach(el => el.classList.remove('selected'));
+        li.classList.add('selected');
+
         showPlan(value); // Call your original function
+        // document.querySelector('#planOptions li[data-value="silver"]').classList.add('selected');
 
         optionsList.style.display = 'none';
     }

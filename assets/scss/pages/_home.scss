@@ -1534,6 +1534,20 @@ main {
           &:hover {
             background-color: #f3f3f3;
           }
+          &.selected {
+            background-color: #f6f6f6;
+            font-weight: 600;
+            position: relative;
+            &::after {
+              content: "✔";
+              position: absolute;
+              right: 16px;
+              top: 50%;
+              transform: translateY(-50%);
+              font-size: 1.2rem;
+              color: #ff4f4f;
+            }
+          }
         }
       }
     }
@@ -1678,6 +1692,14 @@ main {
         width: 280px !important;
         .price {
           width: 310px !important;
+        }
+      }
+    }
+    ul.tabs {
+      li {
+        img {
+          filter: invert(1);
+          width: 11px;
         }
       }
     }

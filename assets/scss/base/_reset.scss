@@ -3,9 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-// html{
-//   overflow-x: hidden;
-// }
+body {
+  overflow-x: hidden !important;
+}
 ::selection {
   color: black;
   background-color: #fff;

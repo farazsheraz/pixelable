@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden !important;
+}
+
 ::selection {
   color: black;
   background-color: #fff;
@@ -168,11 +172,15 @@ footer .container .copyright {
   padding: 0.5em 1em;
   color: #ffc68f;
 }
+footer .container div {
+  text-align: center;
+}
 footer .container div ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 10px;
+  gap: 1rem;
 }
 footer .container div ul li {
   border: 0.1em solid #f5662e;
@@ -1701,6 +1709,20 @@ main .serviceListMob ul.slick-dots .slick-active button {
   main .custom-select-wrapper .options li:hover {
     background-color: #f3f3f3;
   }
+  main .custom-select-wrapper .options li.selected {
+    background-color: #f6f6f6;
+    font-weight: 600;
+    position: relative;
+  }
+  main .custom-select-wrapper .options li.selected::after {
+    content: "✔";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #ff4f4f;
+  }
   main .mobilePlanSelector,
   main .mobilePlans {
     display: inline-block !important;
@@ -1824,6 +1846,10 @@ main .serviceListMob ul.slick-dots .slick-active button {
   }
   main .mobilePlans .plan .price {
     width: 310px !important;
+  }
+  main ul.tabs li img {
+    filter: invert(1);
+    width: 11px;
   }
 }
 body.about {
