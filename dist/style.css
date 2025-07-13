@@ -58,6 +58,9 @@ html {
   align-items: center;
   z-index: 1000;
 }
+.heroBanner header a.logo {
+  width: 184px;
+}
 .heroBanner header .hamburger {
   display: none;
   background: none;
