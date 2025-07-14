@@ -49,3 +49,21 @@ footer {
     }
   }
 }
+
+@media (max-width: 767px) {
+  footer {
+    background-image: url("../assets/img/footer-banner-mob.png");
+    padding: 6rem 0 4rem;
+    .container {
+      flex-direction: column;
+      align-items: center;
+      gap: 2em;
+      .copyright {
+        order: 2;
+      }
+      #backToTop {
+        display: none;
+      }
+    }
+  }
+}

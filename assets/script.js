@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //FOR MOBILE IMG
 
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 767) {
         const imageMap = {
             '.scrollMouse img': 'assets/img/mouseMob.svg',
             '.aboutUs img': 'assets/img/abt-shape-mob.png',
