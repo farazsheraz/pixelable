@@ -1269,7 +1269,12 @@ main {
           h3 {
             font-size: 1.4rem !important;
             line-height: 1.5;
+            width: 87%;
+            margin: 0 auto;
             font-weight: 600;
+          }
+          p {
+            color: #250202;
           }
         }
       }
@@ -1309,7 +1314,7 @@ main {
         }
         div:first-child {
           img {
-            width: 200px;
+            width: 85%;
           }
         }
         .portfolio {
@@ -1348,7 +1353,7 @@ main {
             }
             li {
               gap: 0.3rem;
-              padding: 0 !important;
+              padding: 0 1rem !important;
             }
           }
           .lamp {
@@ -1483,6 +1488,7 @@ main {
       .pricingTable {
         .customPlanNote {
           p {
+            width: 200px;
             strong {
               border-bottom: 1px solid variables.$golden;
               width: 100%;
@@ -1490,6 +1496,9 @@ main {
             }
             flex-direction: column;
             width: 100%;
+            a {
+              padding: 0.5rem 1.7rem;
+            }
           }
         }
       }
@@ -1535,6 +1544,24 @@ main {
           background-position: top;
           background-size: unset;
           padding: 3rem 2rem;
+          background-image: none;
+          background: #a6b0b2;
+          background: -webkit-linear-gradient(
+            0deg,
+            rgba(166, 176, 178, 1) 0%,
+            rgba(118, 174, 188, 1) 100%
+          );
+          background: -moz-linear-gradient(
+            0deg,
+            rgba(166, 176, 178, 1) 0%,
+            rgba(118, 174, 188, 1) 100%
+          );
+          background: linear-gradient(
+            0deg,
+            rgba(166, 176, 178, 1) 0%,
+            rgba(118, 174, 188, 1) 100%
+          );
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#A6B0B2", endColorstr="#76AEBC", GradientType=0);
           h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
@@ -1568,7 +1595,7 @@ main {
               display: block;
               select {
                 border-radius: 10px;
-                padding: 1rem 2rem;
+                padding: 1rem;
                 width: 100%;
                 -moz-appearance: none; /* Firefox */
                 -webkit-appearance: none; /* Safari and Chrome */
@@ -1582,6 +1609,8 @@ main {
             }
           }
           p {
+            display: flex;
+            align-items: center;
             img {
               width: auto;
             }
@@ -1614,6 +1643,12 @@ main {
     .pricing-container {
       flex-direction: column;
       align-items: center;
+      .firstSec {
+        padding: 0 !important;
+      }
+      .description {
+        font-size: 14px !important;
+      }
     }
 
     .mobilePlanSelector {
