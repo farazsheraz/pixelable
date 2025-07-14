@@ -58,63 +58,63 @@ document.querySelectorAll('.option-group').forEach(group => {
     });
 });
 
-// Initialize EmailJS
-emailjs.init("EeX_Lw6kUGFJwxmfI"); // ✅ Your public key
+// // Initialize EmailJS
+// emailjs.init("EeX_Lw6kUGFJwxmfI"); // ✅ Your public key
 
-// Helper: Validate email format
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+// // Helper: Validate email format
+// function isValidEmail(email) {
+//     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+// }
 
-// Handle send button click
-document.querySelector('.send-btn').addEventListener('click', function () {
-    const selectedPlan = document.querySelector('#selected-plan .selected')?.dataset.value || '';
-    const selectedBudget = document.querySelector('#plan-budget .selected')?.dataset.value || '';
-    const selectedServices = [...document.querySelectorAll('#select-services .selected')]
-        .map(btn => btn.dataset.value).join(', ');
+// // Handle send button click
+// document.querySelector('.send-btn').addEventListener('click', function () {
+//     const selectedPlan = document.querySelector('#selected-plan .selected')?.dataset.value || '';
+//     const selectedBudget = document.querySelector('#plan-budget .selected')?.dataset.value || '';
+//     const selectedServices = [...document.querySelectorAll('#select-services .selected')]
+//         .map(btn => btn.dataset.value).join(', ');
 
-    const firstName = document.getElementById("first-name").value.trim();
-    const lastName = document.getElementById("last-name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+//     const firstName = document.getElementById("first-name").value.trim();
+//     const lastName = document.getElementById("last-name").value.trim();
+//     const email = document.getElementById("email").value.trim();
+//     const message = document.getElementById("message").value.trim();
 
-    // ✅ Validation
-    if (!firstName || !lastName || !email) {
-        alert("Please fill in all required fields: First name, Last name, and Email.");
-        return;
-    }
+//     // ✅ Validation
+//     if (!firstName || !lastName || !email) {
+//         alert("Please fill in all required fields: First name, Last name, and Email.");
+//         return;
+//     }
 
-    if (!isValidEmail(email)) {
-        alert("Please enter a valid email address.");
-        return;
-    }
+//     if (!isValidEmail(email)) {
+//         alert("Please enter a valid email address.");
+//         return;
+//     }
 
-    if (!selectedPlan || !selectedBudget || !selectedServices) {
-        alert("Please select a Plan, Budget, and at least one Service.");
-        return;
-    }
+//     if (!selectedPlan || !selectedBudget || !selectedServices) {
+//         alert("Please select a Plan, Budget, and at least one Service.");
+//         return;
+//     }
 
-    // EmailJS template params
-    const templateParams = {
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        message: message,
-        selected_plan: selectedPlan,
-        selected_budget: selectedBudget,
-        selected_services: selectedServices
-    };
+//     // EmailJS template params
+//     const templateParams = {
+//         first_name: firstName,
+//         last_name: lastName,
+//         email: email,
+//         message: message,
+//         selected_plan: selectedPlan,
+//         selected_budget: selectedBudget,
+//         selected_services: selectedServices
+//     };
 
-    // ✅ Send email
-    emailjs.send("service_6vyywcp", "template_kvw784g5", templateParams)
-        .then(function (response) {
-            alert("Message sent successfully!");
-            console.log(response);
-        }, function (error) {
-            alert("Failed to send message. Error: " + JSON.stringify(error));
-            console.error(error);
-        });
-});
+//     // ✅ Send email
+//     emailjs.send("service_6vyywcp", "template_kvw784g5", templateParams)
+//         .then(function (response) {
+//             alert("Message sent successfully!");
+//             console.log(response);
+//         }, function (error) {
+//             alert("Failed to send message. Error: " + JSON.stringify(error));
+//             console.error(error);
+//         });
+// });
 
 //BANNER OBJECTS ANIMATION GSAP
 // Floating up and down
@@ -368,5 +368,75 @@ document.addEventListener('click', function (e) {
     if (!customSelect.contains(e.target) && !optionsList.contains(e.target)) {
         optionsList.style.display = 'none';
         customSelect.classList.remove('open'); // Remove 'open' class
+    }
+});
+
+
+// ✅ Your Supabase credentials
+const supabaseUrl = 'https://ubrwmvqqgaxtwxsiktto.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVicndtdnFxZ2F4dHd4c2lrdHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1MjQ2ODEsImV4cCI6MjA2ODEwMDY4MX0.x6YpH6IFTY48ntIQNRA3hlX42IUJbHRPBlfwfffbfpA';
+const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+let selectedPlan = '';
+let selectedBudget = '';
+let selectedService = '';
+
+// Button click listeners
+document.querySelectorAll('#selected-plan .option-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        selectedPlan = btn.dataset.value;
+        document.querySelectorAll('#selected-plan .option-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+
+document.querySelectorAll('#plan-budget .option-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        selectedBudget = btn.dataset.value;
+        document.querySelectorAll('#plan-budget .option-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+
+document.querySelectorAll('#select-services .option-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        selectedService = btn.dataset.value;
+        document.querySelectorAll('#select-services .option-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
+
+    // fallback to dropdowns
+    if (!selectedPlan) selectedPlan = document.querySelector('#selected-plan-dropdown select').value;
+    if (!selectedBudget) selectedBudget = document.querySelector('#plan-budget-dropdown select').value;
+    if (!selectedService) selectedService = document.querySelector('#select-services-dropdown select').value;
+
+    const data = {
+        selected_plan: selectedPlan,
+        plan_budget: selectedBudget,
+        selected_service: selectedService,
+        first_name: form.firstname.value.trim(),
+        last_name: form.lastname.value.trim(),
+        email: form.email.value.trim(),
+        message: form.message.value.trim(),
+    };
+
+    const { error } = await supabaseClient.from('contact_messages').insert([data]);
+
+    if (error) {
+        console.error('Insert error:', error);
+        alert('Error submitting form: ' + error.message);
+    } else {
+        alert('Message sent!');
+        form.reset();
+        selectedPlan = selectedBudget = selectedService = '';
+        document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
     }
 });

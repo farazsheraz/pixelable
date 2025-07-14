@@ -823,7 +823,7 @@
                 Filters
               </p>
 
-              <form class="form-container" onsubmit="handleSubmit(event)">
+              <form class="form-container" id="contactForm">
                 <div class="form-section">
                   <div class="form-section-label">Selected Plan</div>
                   <!-- Desktop version -->
@@ -842,7 +842,7 @@
 
                   <!-- Mobile version -->
                   <div class="option-dropdown" id="selected-plan-dropdown">
-                    <select id="service-select">
+                    <select id="selected_plan" name="selected_plan">
                       <option value="Silver">Silver</option>
                       <option value="Diamond">Diamond</option>
                       <option value="Gold">Gold</option>
@@ -868,7 +868,7 @@
                   </div>
                   <!-- Mobile version -->
                   <div class="option-dropdown" id="plan-budget-dropdown">
-                    <select id="service-select">
+                    <select id="plan_budget" name="plan_budget">
                       <option value="2500">$ 2500 USD</option>
                       <option value=" 7500">$ 700 USD</option>
                       <option value=" 15000">$ 15000 USD</option>
@@ -892,7 +892,7 @@
                   </div>
                   <!-- Mobile version -->
                   <div class="option-dropdown" id="select-services-dropdown">
-                    <select id="service-select">
+                    <select id="selected_service" name="selected_service">
                       <option value="UI/UX">UI/UX</option>
                       <option value="Animation">Animation</option>
                       <option value="Wordpress">Wordpress</option>
@@ -936,23 +936,23 @@
                   <div class="input-row">
                     <div class="input-group">
                       <label for="first-name">First Name</label>
-                      <input type="text" id="first-name" />
+                      <input type="text" name="firstname" id="first-name" />
                     </div>
 
                     <div class="input-group">
                       <label for="last-name">Last Name</label>
-                      <input type="text" id="last-name" />
+                      <input type="text" name="lastname" id="last-name" />
                     </div>
                   </div>
 
                   <div class="input-group">
                     <label for="email">Email ID</label>
-                    <input type="email" id="email" />
+                    <input type="email" id="email" name="email" />
                   </div>
 
                   <div class="input-group">
                     <label for="message">Message</label>
-                    <input type="text" id="message" />
+                    <input type="text" id="message" name="message" />
                   </div>
                 </div>
 
@@ -1011,6 +1011,7 @@
     <script async src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
     <script async src="assets/script.js"></script>
   </body>
