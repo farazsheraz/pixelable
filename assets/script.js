@@ -334,7 +334,11 @@ showPlan('silver');
 
 // Toggle dropdown
 customSelect.addEventListener('click', () => {
+    const isOpen = optionsList.style.display === 'block';
+
     optionsList.style.display = optionsList.style.display === 'block' ? 'none' : 'block';
+    customSelect.classList.toggle('open', !isOpen); // Add 'open' class only when opening
+
 });
 
 // Option selection handler
@@ -363,5 +367,6 @@ optionsList.addEventListener('click', function (e) {
 document.addEventListener('click', function (e) {
     if (!customSelect.contains(e.target) && !optionsList.contains(e.target)) {
         optionsList.style.display = 'none';
+        customSelect.classList.remove('open'); // Remove 'open' class
     }
 });

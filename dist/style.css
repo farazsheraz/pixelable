@@ -1365,7 +1365,11 @@ main .serviceListMob ul.slick-dots .slick-active button {
     font-size: 1.4rem;
   }
   main .custom-select-wrapper .custom-select .arrow {
-    width: auto;
+    width: 25px;
+  }
+  main .custom-select-wrapper .custom-select.open {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
   }
   main .custom-select-wrapper .options {
     display: none;
@@ -1836,7 +1840,11 @@ main .serviceListMob ul.slick-dots .slick-active button {
     font-size: 1.4rem;
   }
   main .custom-select-wrapper .custom-select .arrow {
-    width: auto;
+    width: 25px;
+  }
+  main .custom-select-wrapper .custom-select.open {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
   }
   main .custom-select-wrapper .options {
     display: none;
