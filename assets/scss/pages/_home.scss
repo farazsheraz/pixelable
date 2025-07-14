@@ -1236,6 +1236,11 @@ main {
     //ABOUT
     .aboutUs {
       padding-top: 5rem !important;
+      p {
+        width: 84%;
+        margin: 0 auto;
+        padding: 1rem 0;
+      }
       img {
         width: auto;
         margin-left: 53px;
@@ -1805,6 +1810,7 @@ main {
 
         img {
           filter: invert(1);
+          width: 80%;
         }
         &:nth-child(1).current {
           background: variables.$orange;

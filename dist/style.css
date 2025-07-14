@@ -1480,6 +1480,11 @@ main .serviceListMob ul.slick-dots .slick-active button {
   main .aboutUs {
     padding-top: 5rem !important;
   }
+  main .aboutUs p {
+    width: 84%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
   main .aboutUs img {
     width: auto;
     margin-left: 53px;
@@ -1965,6 +1970,7 @@ main .serviceListMob ul.slick-dots .slick-active button {
   }
   main ul.tabs li img {
     filter: invert(1);
+    width: 80%;
   }
   main ul.tabs li:nth-child(1).current {
     background: #db3722;
