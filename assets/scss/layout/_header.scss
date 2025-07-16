@@ -1,16 +1,23 @@
 @use "../abstracts/mixins";
 @use "../abstracts/variables";
 
-.heroBanner {
-  header {
-    position: relative;
-    padding: 3rem 1em 2em 1em;
+header {
+  .parent {
+    position: fixed;
+    padding: 3rem 0;
     @include mixins.flex-space-bw;
-    // width: 100%;
+    width: 1440px;
     z-index: 1000;
-    // gap: 5rem;
+    gap: 4rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    // grid-template-columns: repeat(3, 1fr);
     a.logo {
-      width: 184px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 999;
     }
     .hamburger {
       display: none;
@@ -20,7 +27,7 @@
       cursor: pointer;
       z-index: 1100;
       position: relative;
-      color: variables.$black;
+      color: variables.$white;
 
       // This hides the original icon when open and shows × instead
       &::before {
@@ -50,6 +57,8 @@
     }
 
     .mobileRight {
+      width: 100%;
+      text-align: end;
       a {
         color: variables.$orange;
         background-color: variables.$white;
@@ -60,66 +69,109 @@
       }
     }
   }
+  &.fixedHeader {
+    background-color: variables.$orange;
+  }
+  .forMob {
+    display: none;
+  }
+}
 
-  @media (max-width: 767px) {
-    header {
-      padding: 2rem 0;
-      text-align: center;
-      .hamburger {
-        display: block;
-        color: variables.$white;
+@media (max-width: 767px) {
+  .parent {
+    width: 100% !important;
+    padding: 2rem 1rem !important;
+    .hamburger {
+      display: block !important;
+      color: variables.$white;
 
-        &.open {
-          color: variables.$orange !important;
-        }
+      &.open {
+        color: variables.$white !important;
       }
+    }
 
-      .mobileMenu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        background-color: variables.$white;
+    .mobileMenu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      // background-color: variables.$white;
+      background-image: url("../assets/img/hamburger-bg.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: start;
+      padding: 2rem;
+      transform: translateX(-100%);
+      transition: transform 0.4s ease-in-out;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 99;
+
+      ul {
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: start;
-        padding: 2rem;
-        transform: translateX(-100%);
-        transition: transform 0.4s ease-in-out;
-        z-index: 1000;
-        visibility: hidden;
-        opacity: 0;
+        gap: 3rem !important;
+        justify-content: unset;
+        align-items: start;
+        margin-top: 5rem;
 
-        ul {
-          flex-direction: column;
-          gap: 1.5rem;
-          justify-content: unset;
-          align-items: start;
-          margin-top: 5rem;
-
-          li a {
-            color: variables.$black;
-            font-size: 1.5rem;
-          }
-        }
-
-        &.open {
-          transform: translateX(0);
-          visibility: visible;
-          opacity: 1;
+        li a {
+          color: variables.$black;
+          font-size: 1.5rem;
         }
       }
 
-      .mobileRight {
-        a {
-          padding: 0.5rem 1rem;
-          font-weight: 500;
-        }
+      &.open {
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
       }
-      img {
-        width: 80%;
+    }
+
+    .mobileRight {
+      a {
+        padding: 0.5rem 1rem !important;
+        font-weight: 500;
       }
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .forMob {
+    display: block !important;
+    a {
+      color: variables.$orange !important;
+      background-color: variables.$white;
+      border: 1px solid variables.$white;
+      border-radius: 2em;
+      padding: 0.7em 1.5em;
+      font-size: 1.3em;
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .parent {
+    gap: 2rem !important;
+    a.logo {
+      width: 400px !important;
+      text-align: center;
+    }
+    .mobileRight {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .parent {
+    a.logo {
+      width: 184px !important;
     }
   }
 }

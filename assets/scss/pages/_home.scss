@@ -41,7 +41,7 @@ main {
       @include mixins.flex-center;
       flex-direction: column;
       gap: 1em;
-      padding: 8rem 10em;
+      padding: 15rem 8rem 10rem;
       text-align: center;
       h1 {
         font-size: clamp(3.5rem, 1.3846rem + 3.0769vw, 6rem);
@@ -1199,7 +1199,7 @@ main {
     //BANNER
     .heroBanner {
       .heroBannerContent {
-        padding: 1rem 2.5rem 5rem;
+        padding: 8rem 2.5rem 5rem;
         h1 {
           font-weight: 600;
         }
@@ -1742,8 +1742,8 @@ main {
             align-items: center;
           }
           img {
-            width: 20px;
-            height: 20px;
+            width: 50px;
+            height: 50px;
             margin-right: 8px;
           }
 

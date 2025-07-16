@@ -50,18 +50,26 @@ html {
   scroll-behavior: smooth;
 }
 
-.heroBanner header {
-  position: relative;
-  padding: 3rem 1em 2em 1em;
+header .parent {
+  position: fixed;
+  padding: 3rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 1440px;
   z-index: 1000;
+  gap: 4rem;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
-.heroBanner header a.logo {
-  width: 184px;
+header .parent a.logo {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 999;
 }
-.heroBanner header .hamburger {
+header .parent .hamburger {
   display: none;
   background: none;
   border: none;
@@ -69,30 +77,34 @@ html {
   cursor: pointer;
   z-index: 1100;
   position: relative;
-  color: #000;
+  color: #fff;
 }
-.heroBanner header .hamburger::before {
+header .parent .hamburger::before {
   content: "☰";
   font-size: 2.5rem;
 }
-.heroBanner header .hamburger.open::before {
+header .parent .hamburger.open::before {
   content: "×";
   font-size: 2.5rem;
 }
-.heroBanner header .mobileMenu {
+header .parent .mobileMenu {
   display: flex;
 }
-.heroBanner header .mobileMenu ul {
+header .parent .mobileMenu ul {
   list-style: none;
   display: flex;
   gap: 2rem;
 }
-.heroBanner header .mobileMenu ul li a {
+header .parent .mobileMenu ul li a {
   text-decoration: none;
   color: #fff;
   font-size: 1.2em;
 }
-.heroBanner header .mobileRight a {
+header .parent .mobileRight {
+  width: 100%;
+  text-align: end;
+}
+header .parent .mobileRight a {
   color: #db3722;
   background-color: #fff;
   border: 1px solid #fff;
@@ -100,25 +112,35 @@ html {
   padding: 0.7em 2.5em;
   font-size: 1.3em;
 }
+header.fixedHeader {
+  background-color: #db3722;
+}
+header .forMob {
+  display: none;
+}
+
 @media (max-width: 767px) {
-  .heroBanner header {
-    padding: 2rem 0;
-    text-align: center;
+  .parent {
+    width: 100% !important;
+    padding: 2rem 1rem !important;
   }
-  .heroBanner header .hamburger {
-    display: block;
+  .parent .hamburger {
+    display: block !important;
     color: #fff;
   }
-  .heroBanner header .hamburger.open {
-    color: #db3722 !important;
+  .parent .hamburger.open {
+    color: #fff !important;
   }
-  .heroBanner header .mobileMenu {
+  .parent .mobileMenu {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: #fff;
+    background-image: url("../assets/img/hamburger-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     flex-direction: column;
     align-items: flex-start;
     justify-content: start;
@@ -128,32 +150,62 @@ html {
     z-index: 1000;
     visibility: hidden;
     opacity: 0;
+    z-index: 99;
   }
-  .heroBanner header .mobileMenu ul {
+  .parent .mobileMenu ul {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem !important;
     justify-content: unset;
     align-items: start;
     margin-top: 5rem;
   }
-  .heroBanner header .mobileMenu ul li a {
+  .parent .mobileMenu ul li a {
     color: #000;
     font-size: 1.5rem;
   }
-  .heroBanner header .mobileMenu.open {
+  .parent .mobileMenu.open {
     transform: translateX(0);
     visibility: visible;
     opacity: 1;
   }
-  .heroBanner header .mobileRight a {
-    padding: 0.5rem 1rem;
+  .parent .mobileRight a {
+    padding: 0.5rem 1rem !important;
     font-weight: 500;
   }
-  .heroBanner header img {
-    width: 80%;
+  .parent img {
+    width: 100%;
+  }
+  .forMob {
+    display: block !important;
+  }
+  .forMob a {
+    color: #db3722 !important;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 2em;
+    padding: 0.7em 1.5em;
+    font-size: 1.3em;
+    font-weight: 400;
+    text-transform: capitalize;
   }
 }
-
+@media (max-width: 375px) {
+  .parent {
+    gap: 2rem !important;
+  }
+  .parent a.logo {
+    width: 400px !important;
+    text-align: center;
+  }
+  .parent .mobileRight {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .parent a.logo {
+    width: 184px !important;
+  }
+}
 footer {
   color: white;
   padding: 20rem 0 4em 0;
@@ -280,7 +332,6 @@ nav ul li a::before {
 }
 nav ul li a.active::before {
   opacity: 1;
-  filter: invert(1);
 }
 
 body.menu-open {
@@ -320,7 +371,7 @@ main .heroBanner .heroBannerContent {
   align-items: center;
   flex-direction: column;
   gap: 1em;
-  padding: 8rem 10em;
+  padding: 15rem 8rem 10rem;
   text-align: center;
 }
 main .heroBanner .heroBannerContent h1 {
@@ -1446,7 +1497,7 @@ main .serviceListMob ul.slick-dots .slick-active button {
     width: 100%;
   }
   main .heroBanner .heroBannerContent {
-    padding: 1rem 2.5rem 5rem;
+    padding: 8rem 2.5rem 5rem;
   }
   main .heroBanner .heroBannerContent h1 {
     font-weight: 600;
@@ -1904,8 +1955,8 @@ main .serviceListMob ul.slick-dots .slick-active button {
     align-items: center;
   }
   main .custom-select-wrapper .options li img {
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     margin-right: 8px;
   }
   main .custom-select-wrapper .options li:hover {

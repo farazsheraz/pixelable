@@ -8,6 +8,18 @@
 //     body.classList.toggle("menu-open", isOpen);
 // });
 
+window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    const scrollThreshold = 300; // adjust as needed
+
+    if (window.scrollY > scrollThreshold) {
+        header.classList.add("fixedHeader");
+    } else {
+        header.classList.remove("fixedHeader");
+    }
+});
+
+
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.querySelector(".mobileMenu");
 const body = document.body;
@@ -372,7 +384,7 @@ document.addEventListener('click', function (e) {
 });
 
 
-// ✅ Your Supabase credentials
+//  Your Supabase credentials
 const supabaseUrl = 'https://ubrwmvqqgaxtwxsiktto.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVicndtdnFxZ2F4dHd4c2lrdHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1MjQ2ODEsImV4cCI6MjA2ODEwMDY4MX0.x6YpH6IFTY48ntIQNRA3hlX42IUJbHRPBlfwfffbfpA';
 const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);

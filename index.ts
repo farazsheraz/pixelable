@@ -8,8 +8,8 @@ serve(async (req) => {
 
   try {
     const { error } = await resend.emails.send({
-      from: "Pixelable Contact <onboarding@resend.dev>", // Use a verified sender
-      to: ["admin@example.com"], // 🔁 Replace with your admin email
+      from: "Pixelable Contact <admin@pixelable.io>", // Use a verified sender
+      to: ["admin@pixelable.io"], // 🔁 Replace with your admin email
       subject: "🚀 New Contact Form Submission",
       html: `
         <h3>New Contact Message</h3>

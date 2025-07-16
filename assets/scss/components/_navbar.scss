@@ -30,7 +30,6 @@ nav {
         }
         &.active::before {
           opacity: 1;
-          filter: invert(1);
         }
       }
     }
