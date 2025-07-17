@@ -2,16 +2,19 @@
 @use "../abstracts/variables";
 
 header {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  transition: ease 1s all;
   .parent {
-    position: fixed;
     padding: 3rem 0;
     @include mixins.flex-space-bw;
     width: 1440px;
     z-index: 1000;
     gap: 4rem;
     margin: 0 auto;
-    left: 0;
-    right: 0;
+
     // grid-template-columns: repeat(3, 1fr);
     a.logo {
       width: 100%;
@@ -46,12 +49,14 @@ header {
       ul {
         list-style: none;
         display: flex;
-        gap: 2rem;
+        gap: 4rem;
 
         li a {
           text-decoration: none;
           color: variables.$white;
           font-size: 1.2em;
+          display: block;
+          width: max-content;
         }
       }
     }
@@ -118,7 +123,7 @@ header {
         justify-content: unset;
         align-items: start;
         margin-top: 5rem;
-
+        padding-left: 2rem;
         li a {
           color: variables.$black;
           font-size: 1.5rem;

@@ -211,7 +211,7 @@ $('.serviceListMob').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    fade: true,
+    fade: false,
     dots: true,
     autoplay: true,
     prevArrow: "<img src='./assets/img/prev.svg' alt='prevBtn' class='prev'/>",

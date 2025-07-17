@@ -3,9 +3,8 @@
 
 nav {
   ul {
-    @include mixins.flex-space-bw;
     li {
-      padding: 0 1em;
+      // padding: 0 1em;
       a {
         color: variables.$white;
         text-transform: uppercase;
