@@ -33,8 +33,8 @@
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-serve(async (req) => {
-  const body = await req.json();
+serve(async (reqs) => {
+  const body = await reqs.json();
   const resendApiKey = Deno.env.get("RESEND_API_KEY");
 
   const response = await fetch("https://api.resend.com/emails", {
@@ -63,7 +63,11 @@ serve(async (req) => {
     return new Response(`Failed to send: ${error}`, { status: 500 });
   }
 
-  return new Response(JSON.stringify({ success: true }), {
-    headers: { "Content-Type": "application/json" },
-  });
+  return new Response(
+    JSON.stringify({ success: true, message: "Email sent" }),
+    {
+      headers: { "Content-Type": "application/json" },
+      status: 200,
+    },
+  );
 });
