@@ -34,8 +34,22 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 serve(async (reqs) => {
+  if (reqs.method === "OPTIONS") {
+    // Handle CORS preflight request
+    return new Response("ok", {
+      headers: {
+        "Access-Control-Allow-Origin": "https://pixelable.netlify.app/", // Or restrict to your domain
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "*",
+      },
+    });
+  }
+
   const body = await reqs.json();
-  const resendApiKey = Deno.env.get("RESEND_API_KEY");
+  const resendApiKey = Deno.env.get("re_U4Gp1Rey_Eem48GYh4LKaF7WBngPtqAHg");
+  if (!resendApiKey) {
+    return new Response("Missing Resend API key", { status: 500 });
+  }
 
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -44,8 +58,8 @@ serve(async (reqs) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Pixelable Contact <admin@pixelable.io>",
-      to: ["admin@pixelable.io"],
+      from: "Pixelable Contact <farazahmed9094@gmail.com>",
+      to: ["farazahmed9094@gmail.com"],
       subject: "📩 New Contact Form Submission",
       html: `
         <p><strong>Name:</strong> ${body.firstname} ${body.lastname}</p>

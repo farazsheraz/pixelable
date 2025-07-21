@@ -393,62 +393,127 @@ let selectedPlan = '';
 let selectedBudget = '';
 let selectedService = '';
 
-// Button click listeners
-document.querySelectorAll('#selected-plan .option-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-        e.preventDefault();
-        selectedPlan = btn.dataset.value;
-        document.querySelectorAll('#selected-plan .option-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-    });
-});
+// Option button click handler
+document.querySelectorAll('.option-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const group = button.closest('div');
+        group.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
 
-document.querySelectorAll('#plan-budget .option-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-        e.preventDefault();
-        selectedBudget = btn.dataset.value;
-        document.querySelectorAll('#plan-budget .option-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-    });
-});
+        const value = button.dataset.value;
+        const type = button.dataset.type;
 
-document.querySelectorAll('#select-services .option-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-        e.preventDefault();
-        selectedService = btn.dataset.value;
-        document.querySelectorAll('#select-services .option-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        if (type === 'plan') selectedPlan = value;
+        if (type === 'budget') selectedBudget = value;
+        if (type === 'service') selectedService = value;
     });
 });
+const formMessage = document.getElementById('formMessage');
 
 document.getElementById('contactForm').addEventListener('submit', async function (e) {
     e.preventDefault();
-    const form = e.target;
 
+    const formData = new FormData(this);
+    const data1 = Object.fromEntries(formData.entries());
+
+    try {
+        const res = await fetch("https://ubrwmvqqgaxtwxsiktto.supabase.co/functions/v1/send-contact-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${supabaseKey}`  // anon key
+            },
+            body: JSON.stringify(data1),
+        });
+        const result = await res.json();
+
+        if (res.ok) {
+            document.getElementById("alert-msg").textContent = "Email sent successfully!";
+            document.getElementById("alert-msg").style.display = "block";
+            this.reset(); // reset form
+        } else {
+            alert("Failed to send email: " + result.message || "Unknown error");
+        }
+    } catch (err) {
+        alert("Something went wrong.");
+    }
+
+    const form = e.target;
     // fallback to dropdowns
-    if (!selectedPlan) selectedPlan = document.querySelector('#selected-plan-dropdown select').value;
-    if (!selectedBudget) selectedBudget = document.querySelector('#plan-budget-dropdown select').value;
-    if (!selectedService) selectedService = document.querySelector('#select-services-dropdown select').value;
+    if (!selectedPlan) selectedPlan = document.querySelector('#selected-plan-dropdown select')?.value || '';
+    if (!selectedBudget) selectedBudget = document.querySelector('#plan-budget-dropdown select')?.value || '';
+    if (!selectedService) selectedService = document.querySelector('#select-services-dropdown select')?.value || '';
+
+    const firstName = form.firstname.value.trim();
+    const lastName = form.lastname.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    // basic validation
+    if (!firstName || !lastName || !email || !message || !selectedPlan || !selectedBudget || !selectedService) {
+        formMessage.style.color = 'red';
+        formMessage.textContent = '❌ Please fill in all fields.';
+        return;
+    }
 
     const data = {
         selected_plan: selectedPlan,
         plan_budget: selectedBudget,
         selected_service: selectedService,
-        first_name: form.firstname.value.trim(),
-        last_name: form.lastname.value.trim(),
-        email: form.email.value.trim(),
-        message: form.message.value.trim(),
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        message: message,
     };
 
     const { error } = await supabaseClient.from('contact_messages').insert([data]);
 
     if (error) {
         console.error('Insert error:', error);
-        alert('Error submitting form: ' + error.message);
+        formMessage.style.color = 'red';
+        formMessage.textContent = '❌ Error submitting form. Please try again.';
     } else {
-        alert('Message sent!');
+        formMessage.style.color = 'green';
+        formMessage.textContent = '✅ Message sent successfully!';
         form.reset();
         selectedPlan = selectedBudget = selectedService = '';
         document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
     }
+
+    // Optional: Auto-hide message after 5 seconds
+    setTimeout(() => {
+        formMessage.textContent = '';
+    }, 5000);
 });
+
+// document.getElementById('contactForm').addEventListener('submit', async function (e) {
+//     e.preventDefault();
+//     const form = e.target;
+
+//     // fallback to dropdowns
+//     if (!selectedPlan) selectedPlan = document.querySelector('#selected-plan-dropdown select').value;
+//     if (!selectedBudget) selectedBudget = document.querySelector('#plan-budget-dropdown select').value;
+//     if (!selectedService) selectedService = document.querySelector('#select-services-dropdown select').value;
+
+//     const data = {
+//         selected_plan: selectedPlan,
+//         plan_budget: selectedBudget,
+//         selected_service: selectedService,
+//         first_name: form.firstname.value.trim(),
+//         last_name: form.lastname.value.trim(),
+//         email: form.email.value.trim(),
+//         message: form.message.value.trim(),
+//     };
+
+//     const { error } = await supabaseClient.from('contact_messages').insert([data]);
+
+//     if (error) {
+//         console.error('Insert error:', error);
+//         alert('Error submitting form: ' + error.message);
+//     } else {
+//         alert('Message sent!');
+//         form.reset();
+//         selectedPlan = selectedBudget = selectedService = '';
+//         document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+//     }
+// });
