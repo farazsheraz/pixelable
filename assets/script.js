@@ -118,7 +118,7 @@ document.querySelectorAll('.option-group').forEach(group => {
 //     };
 
 //     // ✅ Send email
-//     emailjs.send("service_6vyywcp", "template_kvw784g5", templateParams)
+//     emailjs.send("service_6vyywcp", "template_kvw78q5", templateParams)
 //         .then(function (response) {
 //             alert("Message sent successfully!");
 //             console.log(response);
@@ -127,6 +127,82 @@ document.querySelectorAll('.option-group').forEach(group => {
 //             console.error(error);
 //         });
 // });
+
+
+// Initialize with your actual public key
+emailjs.init("EeX_Lw6kUGFJwxmfI");
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+
+    // Helper to get selected value (from buttons or dropdown)
+    function getValue(buttonGroupId, selectId) {
+        const activeBtn = document.querySelector(`#${buttonGroupId} .option-btn.active`);
+        if (activeBtn) return activeBtn.dataset.value;
+
+        const dropdown = document.querySelector(`#${selectId} select`);
+        return dropdown ? dropdown.value : "";
+    }
+
+    // Handle custom button clicks
+    document.querySelectorAll(".option-group").forEach(group => {
+        group.querySelectorAll(".option-btn").forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+                group.querySelectorAll(".option-btn").forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+    });
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const selected_plan = getValue("selected-plan", "selected-plan-dropdown");
+        const plan_budget = getValue("plan-budget", "plan-budget-dropdown");
+        const selected_service = getValue("select-services", "select-services-dropdown");
+
+        const firstname = document.getElementById("first-name").value.trim();
+        const lastname = document.getElementById("last-name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!firstname || !lastname || !email || !message) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        // Prepare the data to send to EmailJS
+        const templateParams = {
+            selected_plan,
+            plan_budget,
+            selected_service,
+            firstname,
+            lastname,
+            email,
+            message
+        };
+
+        // Send the email using EmailJS
+        emailjs.send("service_6vyywcp", "template_kvw78q5", templateParams)
+            .then(() => {
+                alert("Your message has been sent successfully!");
+                form.reset();
+                document.querySelectorAll(".option-btn").forEach(btn => btn.classList.remove("active"));
+            })
+            .catch((error) => {
+                console.error("EmailJS Error:", error);
+                alert("Something went wrong. Please try again later.");
+            });
+    });
+});
+
+
 
 //BANNER OBJECTS ANIMATION GSAP
 // Floating up and down
@@ -385,106 +461,106 @@ document.addEventListener('click', function (e) {
 
 
 //  Your Supabase credentials
-const supabaseUrl = 'https://ubrwmvqqgaxtwxsiktto.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVicndtdnFxZ2F4dHd4c2lrdHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1MjQ2ODEsImV4cCI6MjA2ODEwMDY4MX0.x6YpH6IFTY48ntIQNRA3hlX42IUJbHRPBlfwfffbfpA';
-const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
+// const supabaseUrl = 'https://ubrwmvqqgaxtwxsiktto.supabase.co';
+// const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVicndtdnFxZ2F4dHd4c2lrdHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1MjQ2ODEsImV4cCI6MjA2ODEwMDY4MX0.x6YpH6IFTY48ntIQNRA3hlX42IUJbHRPBlfwfffbfpA';
+// const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-let selectedPlan = '';
-let selectedBudget = '';
-let selectedService = '';
+// let selectedPlan = '';
+// let selectedBudget = '';
+// let selectedService = '';
 
-// Option button click handler
-document.querySelectorAll('.option-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const group = button.closest('div');
-        group.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
-        button.classList.add('active');
+// // Option button click handler
+// document.querySelectorAll('.option-btn').forEach(button => {
+//     button.addEventListener('click', () => {
+//         const group = button.closest('div');
+//         group.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+//         button.classList.add('active');
 
-        const value = button.dataset.value;
-        const type = button.dataset.type;
+//         const value = button.dataset.value;
+//         const type = button.dataset.type;
 
-        if (type === 'plan') selectedPlan = value;
-        if (type === 'budget') selectedBudget = value;
-        if (type === 'service') selectedService = value;
-    });
-});
-const formMessage = document.getElementById('formMessage');
+//         if (type === 'plan') selectedPlan = value;
+//         if (type === 'budget') selectedBudget = value;
+//         if (type === 'service') selectedService = value;
+//     });
+// });
+// const formMessage = document.getElementById('formMessage');
 
-document.getElementById('contactForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
+// document.getElementById('contactForm').addEventListener('submit', async function (e) {
+//     e.preventDefault();
 
-    const formData = new FormData(this);
-    const data1 = Object.fromEntries(formData.entries());
+//     const formData = new FormData(this);
+//     const data1 = Object.fromEntries(formData.entries());
 
-    try {
-        const res = await fetch("https://ubrwmvqqgaxtwxsiktto.supabase.co/functions/v1/send-contact-email", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${supabaseKey}`  // anon key
-            },
-            body: JSON.stringify(data1),
-        });
-        const result = await res.json();
+//     try {
+//         const res = await fetch("https://ubrwmvqqgaxtwxsiktto.supabase.co/functions/v1/send-contact-email", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 "Authorization": `Bearer ${supabaseKey}`  // anon key
+//             },
+//             body: JSON.stringify(data1),
+//         });
+//         const result = await res.json();
 
-        if (res.ok) {
-            document.getElementById("alert-msg").textContent = "Email sent successfully!";
-            document.getElementById("alert-msg").style.display = "block";
-            this.reset(); // reset form
-        } else {
-            alert("Failed to send email: " + result.message || "Unknown error");
-        }
-    } catch (err) {
-        alert("Something went wrong.");
-    }
+//         if (res.ok) {
+//             document.getElementById("alert-msg").textContent = "Email sent successfully!";
+//             document.getElementById("alert-msg").style.display = "block";
+//             this.reset(); // reset form
+//         } else {
+//             alert("Failed to send email: " + result.message || "Unknown error");
+//         }
+//     } catch (err) {
+//         alert("Something went wrong.");
+//     }
 
-    const form = e.target;
-    // fallback to dropdowns
-    if (!selectedPlan) selectedPlan = document.querySelector('#selected-plan-dropdown select')?.value || '';
-    if (!selectedBudget) selectedBudget = document.querySelector('#plan-budget-dropdown select')?.value || '';
-    if (!selectedService) selectedService = document.querySelector('#select-services-dropdown select')?.value || '';
+//     const form = e.target;
+//     // fallback to dropdowns
+//     if (!selectedPlan) selectedPlan = document.querySelector('#selected-plan-dropdown select')?.value || '';
+//     if (!selectedBudget) selectedBudget = document.querySelector('#plan-budget-dropdown select')?.value || '';
+//     if (!selectedService) selectedService = document.querySelector('#select-services-dropdown select')?.value || '';
 
-    const firstName = form.firstname.value.trim();
-    const lastName = form.lastname.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+//     const firstName = form.firstname.value.trim();
+//     const lastName = form.lastname.value.trim();
+//     const email = form.email.value.trim();
+//     const message = form.message.value.trim();
 
-    // basic validation
-    if (!firstName || !lastName || !email || !message || !selectedPlan || !selectedBudget || !selectedService) {
-        formMessage.style.color = 'red';
-        formMessage.textContent = '❌ Please fill in all fields.';
-        return;
-    }
+//     // basic validation
+//     if (!firstName || !lastName || !email || !message || !selectedPlan || !selectedBudget || !selectedService) {
+//         formMessage.style.color = 'red';
+//         formMessage.textContent = '❌ Please fill in all fields.';
+//         return;
+//     }
 
-    const data = {
-        selected_plan: selectedPlan,
-        plan_budget: selectedBudget,
-        selected_service: selectedService,
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        message: message,
-    };
+//     const data = {
+//         selected_plan: selectedPlan,
+//         plan_budget: selectedBudget,
+//         selected_service: selectedService,
+//         first_name: firstName,
+//         last_name: lastName,
+//         email: email,
+//         message: message,
+//     };
 
-    const { error } = await supabaseClient.from('contact_messages').insert([data]);
+//     const { error } = await supabaseClient.from('contact_messages').insert([data]);
 
-    if (error) {
-        console.error('Insert error:', error);
-        formMessage.style.color = 'red';
-        formMessage.textContent = '❌ Error submitting form. Please try again.';
-    } else {
-        formMessage.style.color = 'green';
-        formMessage.textContent = '✅ Message sent successfully!';
-        form.reset();
-        selectedPlan = selectedBudget = selectedService = '';
-        document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
-    }
+//     if (error) {
+//         console.error('Insert error:', error);
+//         formMessage.style.color = 'red';
+//         formMessage.textContent = '❌ Error submitting form. Please try again.';
+//     } else {
+//         formMessage.style.color = 'green';
+//         formMessage.textContent = '✅ Message sent successfully!';
+//         form.reset();
+//         selectedPlan = selectedBudget = selectedService = '';
+//         document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+//     }
 
-    // Optional: Auto-hide message after 5 seconds
-    setTimeout(() => {
-        formMessage.textContent = '';
-    }, 5000);
-});
+//     // Optional: Auto-hide message after 5 seconds
+//     setTimeout(() => {
+//         formMessage.textContent = '';
+//     }, 5000);
+// });
 
 // document.getElementById('contactForm').addEventListener('submit', async function (e) {
 //     e.preventDefault();
